@@ -5,7 +5,8 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const webpackConfig = merge(baseWebpackConfig, {
-    mode: 'production',
+    mode: 'development',
+    watch: true,
     module: {
         rules: utils.styleLoaders({
             sourceMap: config.build.productionSourceMap,
@@ -13,7 +14,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         })
     },
     optimization: {
-        minimize: true,
+        minimize: false,
         splitChunks: {
             cacheGroups: {
                 initial: {
@@ -34,7 +35,7 @@ const webpackConfig = merge(baseWebpackConfig, {
             }
         }
     },
-    devtool: config.build.productionSourceMap ? '#source-map' : false,
+    devtool: config.dev.productionSourceMap ? '#source-map' : false,
     output: {
         path: config.build.assetsRoot,
         filename: utils.assetsPath('js/[name].js'),
@@ -47,24 +48,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         })
     ]
 })
-
-if (config.build.productionGzip) {
-    const CompressionWebpackPlugin = require('compression-webpack-plugin')
-
-    webpackConfig.plugins.push(
-        new CompressionWebpackPlugin({
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: new RegExp(
-                '\\.(' +
-                config.build.productionGzipExtensions.join('|') +
-                ')$'
-            ),
-            threshold: 10240,
-            minRatio: 0.8
-        })
-    )
-}
 
 if (config.bundleAnalyzerReport) {
     const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin

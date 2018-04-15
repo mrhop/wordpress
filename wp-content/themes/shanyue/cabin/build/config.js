@@ -10,6 +10,7 @@ module.exports = {
         productionGzipExtensions: ['js', 'css'],
     },
     dev: {
-        cssSourceMap: true
+        cssSourceMap: true,
+        productionSourceMap: true
     }
 }

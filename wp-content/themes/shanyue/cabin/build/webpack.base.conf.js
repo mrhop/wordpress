@@ -7,7 +7,7 @@ let assetFontName = 'fonts/[name].[ext]';
 let assetImgOutputPath = utils.assetsPath('/');
 let assetFontOutputPath = utils.assetsPath('/');
 module.exports = {
-    entry: Object.assign({vendor: './assets/scss/vendor.scss'}, utils.getEntries('./assets/js/*.js'), utils.getEntries('./assets/scss/*-alone.scss')),
+    entry: Object.assign({vendors: './assets/scss/vendors.scss'}, utils.getEntries('./assets/js/*.js'), utils.getEntries('./assets/scss/*-alone.scss')),
     output: {
         path: config.assetsRoot,
         filename: '[name].js'

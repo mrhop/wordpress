@@ -4,7 +4,8 @@
   "description": "basic Commercial site",
   "main": "index.js",
   "scripts": {
-    "build": "node build/build-prod.js"
+    "build": "set NODE_ENV=production&&node build/build.js",
+    "dev": "set NODE_ENV=development&&node build/build.js"
   },
   "author": "hope ever",
   "license": "ISC",
