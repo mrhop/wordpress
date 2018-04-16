@@ -6,6 +6,8 @@ let assetImgName = 'images/[name].[ext]';
 let assetFontName = 'fonts/[name].[ext]';
 let assetImgOutputPath = utils.assetsPath('/');
 let assetFontOutputPath = utils.assetsPath('/');
+let assetImgPublicPath = utils.assetsPath('../');
+let assetFontPublicPath = utils.assetsPath('../');
 module.exports = {
     entry: Object.assign({vendors: './assets/scss/vendors.scss'}, utils.getEntries('./assets/js/*.js'), utils.getEntries('./assets/scss/*-alone.scss')),
     output: {
@@ -37,21 +39,23 @@ module.exports = {
             {
                 test: /^\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
-                include: [resolve('assets/images')],
+                include: [resolve('./assets/images')],
                 query: {
                     limit: 10000,
                     name: assetImgName,
-                    outputPath: assetImgOutputPath
-                }
+                    outputPath: assetImgOutputPath,
+                    publicPath: assetImgPublicPath,
+                },
             },
             {
-                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
                 loader: 'url-loader',
-                include: [resolve('assets/fonts')],
+                include: [resolve('./assets/fonts')],
                 query: {
                     limit: 10000,
                     name: assetFontName,
-                    outputPath: assetFontOutputPath
+                    outputPath: assetFontOutputPath,
+                    publicPath: assetFontPublicPath,
                 }
             }
         ]
