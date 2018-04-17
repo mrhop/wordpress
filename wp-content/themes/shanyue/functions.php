@@ -122,6 +122,10 @@ add_action( 'widgets_init', 'shanyue_widgets_init' );
 function shanyue_scripts() {
 	wp_enqueue_style( 'shanyue-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'shanyue-vendors-css', get_template_directory_uri() . '/assets/css/vendors.css');
+
+	wp_enqueue_script( 'shanyue-vendors-js', get_template_directory_uri() . '/assets/js/vendors.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'shanyue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'shanyue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

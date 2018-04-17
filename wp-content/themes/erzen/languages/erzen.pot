@@ -1,0 +1,587 @@
+# Copyright (C) 2017 wpshopmart
+# This file is distributed under the GNU General Public License v3.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Erzen 1.0\n"
+"POT-Creation-Date: 2017-09-05 13:06+0530\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:40
+msgid "Back to home"
+msgstr ""
+
+#: archive.php:48 full-width.php:42 home.php:38 index.php:31 page.php:38
+#: single.php:30
+msgid "No Posts Found"
+msgstr ""
+
+#: author.php:33
+msgid "No Post by this author"
+msgstr ""
+
+#: category.php:36
+msgid "No Post found in this category"
+msgstr ""
+
+#: comments.php:23
+msgid "Pingback:"
+msgstr ""
+
+#: comments.php:23 comments.php:53 full-width.php:38 home.php:33 page.php:34
+msgid "Edit"
+msgstr ""
+
+#: comments.php:43
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:83
+#, php-format
+msgid "<span>%1$s</span> Comment on this post"
+msgid_plural "<span>%1$s</span> Comments on this post"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:91 comments.php:102
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:92 comments.php:103
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:115
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:125
+msgid "Submit Comment"
+msgstr ""
+
+#: comments.php:126
+msgid "Leave a comment"
+msgstr ""
+
+#: comments.php:130
+msgid "Comment here"
+msgstr ""
+
+#: comments.php:135
+msgid "Your Name (Required)&hellip;"
+msgstr ""
+
+#: comments.php:139
+msgid "Your Email (Required)&hellip;"
+msgstr ""
+
+#: comments.php:143
+msgid "Your Website&hellip;"
+msgstr ""
+
+#: functions.php:62
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:136
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:138
+msgid "Sidebar on the blog layout."
+msgstr ""
+
+#: functions.php:150
+msgid "Footer Widget Area 1"
+msgstr ""
+
+#: functions.php:152
+msgid "The footer widget area 1"
+msgstr ""
+
+#: functions.php:160
+msgid "Footer Widget Area 2"
+msgstr ""
+
+#: functions.php:162
+msgid "The footer widget area 2"
+msgstr ""
+
+#: functions.php:170
+msgid "Footer Widget Area 3"
+msgstr ""
+
+#: functions.php:172
+msgid "The footer widget area 3"
+msgstr ""
+
+#: functions.php:180
+msgid "Footer Widget Area 4"
+msgstr ""
+
+#: functions.php:182
+msgid "The footer widget area 4"
+msgstr ""
+
+#: functions.php:200
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: functions.php:217
+msgid "Blog"
+msgstr ""
+
+#: functions.php:289
+msgid "Error 404"
+msgstr ""
+
+#: functions.php:291
+msgid "Search results for"
+msgstr ""
+
+#: functions.php:306
+msgid "Page"
+msgstr ""
+
+#: inc/customizer-aboutus.php:5
+msgid "About Us Section"
+msgstr ""
+
+#: inc/customizer-aboutus.php:22
+msgid "About Us Option"
+msgstr ""
+
+#: inc/customizer-aboutus.php:23
+msgid "Show/hide option for About Us Section."
+msgstr ""
+
+#: inc/customizer-aboutus.php:37 inc/customizer-services.php:76
+msgid "Image 1"
+msgstr ""
+
+#: inc/customizer-aboutus.php:51 inc/customizer-feature.php:64
+#: inc/customizer-services.php:90 inc/customizer-slider.php:56
+msgid "Heading 1"
+msgstr ""
+
+#: inc/customizer-aboutus.php:63 inc/customizer-feature.php:76
+#: inc/customizer-services.php:102 inc/customizer-slider.php:68
+#: inc/customizer-testimonial.php:75
+msgid "Text 1"
+msgstr ""
+
+#: inc/customizer-aboutus.php:76 inc/customizer-services.php:115
+#: inc/customizer-slider.php:81
+msgid "Button URL 1"
+msgstr ""
+
+#: inc/customizer-aboutus.php:88 inc/customizer-services.php:127
+#: inc/customizer-slider.php:93
+msgid "Button Text 1"
+msgstr ""
+
+#: inc/customizer-aboutus.php:100 inc/customizer-services.php:139
+msgid "Image 2"
+msgstr ""
+
+#: inc/customizer-aboutus.php:114 inc/customizer-feature.php:102
+#: inc/customizer-services.php:153 inc/customizer-slider.php:120
+msgid "Heading 2"
+msgstr ""
+
+#: inc/customizer-aboutus.php:126 inc/customizer-feature.php:114
+#: inc/customizer-services.php:165 inc/customizer-slider.php:132
+#: inc/customizer-testimonial.php:112
+msgid "Text 2"
+msgstr ""
+
+#: inc/customizer-aboutus.php:139 inc/customizer-services.php:178
+#: inc/customizer-slider.php:145
+msgid "Button URL 2"
+msgstr ""
+
+#: inc/customizer-aboutus.php:151 inc/customizer-services.php:190
+#: inc/customizer-slider.php:157
+msgid "Button Text 2"
+msgstr ""
+
+#: inc/customizer-blogpost.php:5
+msgid "Blog Section"
+msgstr ""
+
+#: inc/customizer-blogpost.php:23
+msgid "Blog Option"
+msgstr ""
+
+#: inc/customizer-blogpost.php:24
+msgid "Show/hide option for Blog Section."
+msgstr ""
+
+#: inc/customizer-feature.php:4
+msgid "Feature Section"
+msgstr ""
+
+#: inc/customizer-feature.php:21
+msgid "Feature Option"
+msgstr ""
+
+#: inc/customizer-feature.php:22
+msgid "Show/hide option for Features Section."
+msgstr ""
+
+#: inc/customizer-feature.php:37
+msgid "Features Title"
+msgstr ""
+
+#: inc/customizer-feature.php:51
+msgid "Icon 1"
+msgstr ""
+
+#: inc/customizer-feature.php:52 inc/customizer-feature.php:90
+#: inc/customizer-feature.php:128 inc/customizer-feature.php:166
+#: inc/customizer-feature.php:204 inc/customizer-feature.php:242
+#: inc/customizer-general.php:100 inc/customizer-general.php:125
+#: inc/customizer-general.php:150
+msgid "Insert Font Awesome Class Name"
+msgstr ""
+
+#: inc/customizer-feature.php:89
+msgid "Icon 2"
+msgstr ""
+
+#: inc/customizer-feature.php:127
+msgid "Icon 3"
+msgstr ""
+
+#: inc/customizer-feature.php:140 inc/customizer-services.php:216
+msgid "Heading 3"
+msgstr ""
+
+#: inc/customizer-feature.php:152 inc/customizer-services.php:228
+#: inc/customizer-testimonial.php:149
+msgid "Text 3"
+msgstr ""
+
+#: inc/customizer-feature.php:165
+msgid "Icon 4"
+msgstr ""
+
+#: inc/customizer-feature.php:178 inc/customizer-services.php:279
+msgid "Heading 4"
+msgstr ""
+
+#: inc/customizer-feature.php:190 inc/customizer-services.php:291
+#: inc/customizer-testimonial.php:186
+msgid "Text 4"
+msgstr ""
+
+#: inc/customizer-feature.php:203
+msgid "Icon 5"
+msgstr ""
+
+#: inc/customizer-feature.php:216
+msgid "Heading 5"
+msgstr ""
+
+#: inc/customizer-feature.php:228
+msgid "Text 5"
+msgstr ""
+
+#: inc/customizer-feature.php:241
+msgid "Icon 6"
+msgstr ""
+
+#: inc/customizer-feature.php:254
+msgid "Heading 6"
+msgstr ""
+
+#: inc/customizer-feature.php:266
+msgid "Text 6"
+msgstr ""
+
+#: inc/customizer-footer-callout.php:4
+msgid "Footer Callout Section"
+msgstr ""
+
+#: inc/customizer-footer-callout.php:22
+msgid "Footer Callout"
+msgstr ""
+
+#: inc/customizer-footer-callout.php:23
+msgid "Show/hide option for Footer Callout Section."
+msgstr ""
+
+#: inc/customizer-footer-callout.php:37
+msgid "Footer Callout Heading"
+msgstr ""
+
+#: inc/customizer-footer-callout.php:49
+msgid "Footer Callout URL"
+msgstr ""
+
+#: inc/customizer-footer-callout.php:61
+msgid "Footer Callout Text"
+msgstr ""
+
+#: inc/customizer-general.php:5
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer-general.php:12
+msgid "Footer Section"
+msgstr ""
+
+#: inc/customizer-general.php:30
+msgid "Footer Option"
+msgstr ""
+
+#: inc/customizer-general.php:31
+msgid "Show/hide option for Footer Section."
+msgstr ""
+
+#: inc/customizer-general.php:46
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer-general.php:54
+msgid "Top Header Section"
+msgstr ""
+
+#: inc/customizer-general.php:72
+msgid "Header Option"
+msgstr ""
+
+#: inc/customizer-general.php:73
+msgid "Show/hide option for Header Section."
+msgstr ""
+
+#: inc/customizer-general.php:87
+msgid "Year"
+msgstr ""
+
+#: inc/customizer-general.php:99
+msgid "Email Icon"
+msgstr ""
+
+#: inc/customizer-general.php:112
+msgid "Email"
+msgstr ""
+
+#: inc/customizer-general.php:124
+msgid "Phone Icon"
+msgstr ""
+
+#: inc/customizer-general.php:137
+msgid "Contact"
+msgstr ""
+
+#: inc/customizer-general.php:149
+msgid "Time Icon"
+msgstr ""
+
+#: inc/customizer-general.php:162
+msgid "Time"
+msgstr ""
+
+#: inc/customizer-general.php:170
+msgid "Header Callout Section"
+msgstr ""
+
+#: inc/customizer-general.php:188
+msgid "Header Callout"
+msgstr ""
+
+#: inc/customizer-general.php:189
+msgid "Show/hide option for Header Callout Section."
+msgstr ""
+
+#: inc/customizer-general.php:203
+msgid "Header Callout Heading"
+msgstr ""
+
+#: inc/customizer-general.php:215
+msgid "Header Callout URL"
+msgstr ""
+
+#: inc/customizer-general.php:227
+msgid "Header Callout Text"
+msgstr ""
+
+#: inc/customizer-services.php:4
+msgid "Service Section"
+msgstr ""
+
+#: inc/customizer-services.php:21
+msgid "Services Option"
+msgstr ""
+
+#: inc/customizer-services.php:22
+msgid "Show/hide option for Services Section."
+msgstr ""
+
+#: inc/customizer-services.php:37
+msgid "Services Title"
+msgstr ""
+
+#: inc/customizer-services.php:50
+msgid "Check Services URL"
+msgstr ""
+
+#: inc/customizer-services.php:62
+msgid "Check Services Text"
+msgstr ""
+
+#: inc/customizer-services.php:202
+msgid "Image 3"
+msgstr ""
+
+#: inc/customizer-services.php:241
+msgid "Button URL 3"
+msgstr ""
+
+#: inc/customizer-services.php:253
+msgid "Button Text 3"
+msgstr ""
+
+#: inc/customizer-services.php:265
+msgid "Image 4"
+msgstr ""
+
+#: inc/customizer-services.php:304
+msgid "Button URL 4"
+msgstr ""
+
+#: inc/customizer-services.php:316
+msgid "Button Text 4"
+msgstr ""
+
+#: inc/customizer-slider.php:7
+msgid "Slider Section"
+msgstr ""
+
+#: inc/customizer-slider.php:27
+msgid "Slider Option"
+msgstr ""
+
+#: inc/customizer-slider.php:28
+msgid "Show/hide option for Slider Section."
+msgstr ""
+
+#: inc/customizer-slider.php:42
+msgid "slider Image 1"
+msgstr ""
+
+#: inc/customizer-slider.php:106
+msgid "slider Image 2"
+msgstr ""
+
+#: inc/customizer-testimonial.php:4
+msgid "Testimonial Section"
+msgstr ""
+
+#: inc/customizer-testimonial.php:21
+msgid "Testimonials Option"
+msgstr ""
+
+#: inc/customizer-testimonial.php:22
+msgid "Show/hide option for Testimonial Section."
+msgstr ""
+
+#: inc/customizer-testimonial.php:38
+msgid "Testimonial Title"
+msgstr ""
+
+#: inc/customizer-testimonial.php:51
+msgid "Client Name 1"
+msgstr ""
+
+#: inc/customizer-testimonial.php:63
+msgid "Client Designation 1"
+msgstr ""
+
+#: inc/customizer-testimonial.php:88
+msgid "Client Name 2"
+msgstr ""
+
+#: inc/customizer-testimonial.php:100
+msgid "Client Designation 2"
+msgstr ""
+
+#: inc/customizer-testimonial.php:125
+msgid "Client Name 3"
+msgstr ""
+
+#: inc/customizer-testimonial.php:137
+msgid "Client Designation 3"
+msgstr ""
+
+#: inc/customizer-testimonial.php:162
+msgid "Client Name 4"
+msgstr ""
+
+#: inc/customizer-testimonial.php:174
+msgid "Client Designation 4"
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "Front Page Settings"
+msgstr ""
+
+#: inc/erzen-theme-options.php:11 inc/erzen-theme-options.php:22
+#: inc/erzen-theme-options.php:33 inc/erzen-theme-options.php:44
+#: inc/erzen-theme-options.php:55 inc/erzen-theme-options.php:66
+#: inc/erzen-theme-options.php:77 inc/erzen-theme-options.php:88
+#: inc/erzen-theme-options.php:99 inc/erzen-theme-options.php:110
+msgid "Show"
+msgstr ""
+
+#: inc/erzen-theme-options.php:12 inc/erzen-theme-options.php:23
+#: inc/erzen-theme-options.php:34 inc/erzen-theme-options.php:45
+#: inc/erzen-theme-options.php:56 inc/erzen-theme-options.php:67
+#: inc/erzen-theme-options.php:78 inc/erzen-theme-options.php:89
+#: inc/erzen-theme-options.php:100 inc/erzen-theme-options.php:111
+msgid "Hide"
+msgstr ""
+
+#: inc/extras.php:15 inc/extras.php:16 searchform.php:13
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: inc/extras.php:16 searchform.php:15
+msgctxt "placeholder"
+msgid "Type to search here..."
+msgstr ""
+
+#: search.php:18
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:21
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:47
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: tag.php:37
+msgid "No Post found in this tag"
+msgstr ""

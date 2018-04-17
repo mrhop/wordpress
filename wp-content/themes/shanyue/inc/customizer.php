@@ -25,7 +25,16 @@ function shanyue_customize_register( $wp_customize ) {
 			'render_callback' => 'shanyue_customize_partial_blogdescription',
 		) );
 	}
+	// sub customizer
+	$wp_customize->add_panel('frontpage',
+		array('title' => esc_html__('Shanyue Options', 'shanyue'),
+		      'description' => '',
+		      'priority' => 3,));
+	require get_template_directory() . '/inc/theme-options.php';
+	require get_template_directory() . '/inc/sanitize.php';
+	require get_template_directory() . '/inc/customizer-header-sectioninfo.php';
 }
+
 add_action( 'customize_register', 'shanyue_customize_register' );
 
 /**
@@ -52,4 +61,5 @@ function shanyue_customize_partial_blogdescription() {
 function shanyue_customize_preview_js() {
 	wp_enqueue_script( 'shanyue-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
+
 add_action( 'customize_preview_init', 'shanyue_customize_preview_js' );
