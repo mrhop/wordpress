@@ -59,11 +59,6 @@ if ( ! function_exists( 'shanyue_setup' ) ) :
 			'caption',
 		) );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'shanyue_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -74,8 +69,6 @@ if ( ! function_exists( 'shanyue_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -96,6 +89,7 @@ function shanyue_content_width() {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'shanyue_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', 'shanyue_content_width', 0 );
 
 /**
@@ -114,6 +108,7 @@ function shanyue_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
+
 add_action( 'widgets_init', 'shanyue_widgets_init' );
 
 /**
@@ -122,24 +117,19 @@ add_action( 'widgets_init', 'shanyue_widgets_init' );
 function shanyue_scripts() {
 	wp_enqueue_style( 'shanyue-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'shanyue-vendors-css', get_template_directory_uri() . '/assets/css/vendors.css');
+	wp_enqueue_style( 'shanyue-vendors-css', get_template_directory_uri() . '/assets/css/vendors.css' );
 
-	wp_enqueue_script( 'shanyue-vendors-js', get_template_directory_uri() . '/assets/js/vendors.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'shanyue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
+	wp_enqueue_script( 'shanyue-initial-js', get_template_directory_uri() . '/assets/js/initial.js', array(), '', true );
+	wp_enqueue_script( 'shanyue-common-js', get_template_directory_uri() . '/assets/js/common.js', array(), '', true );
+	wp_enqueue_script( 'shanyue-vendors-js', get_template_directory_uri() . '/assets/js/vendors.js', array(), '', true );
 	wp_enqueue_script( 'shanyue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'shanyue_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+add_action( 'wp_enqueue_scripts', 'shanyue_scripts' );
 
 /**
  * Custom template tags for this theme.

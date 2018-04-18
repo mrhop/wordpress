@@ -103,7 +103,7 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 function shanyue_customize_partial_header_phone() {
 	$phone_value = get_theme_mod( 'shanyue_header_phone_value' );
 	if ( $phone_value != '' ) {
-		echo '<i class="fa fa-phone"></i>' . '<a href="tel:' . $phone_value . '">' . $phone_value . '</a>';
+		echo '<a href="tel:' . $phone_value . '"><i class="fa fa-phone"></i>' . $phone_value . '</a>';
 	}
 }
 
@@ -135,7 +135,7 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 function shanyue_customize_partial_header_wechat() {
 	$wechat_value = get_theme_mod( 'shanyue_header_wechat_value' );
 	if ( $wechat_value != '' ) {
-		echo '<i class="fa fa-wechat"></i>' . __( 'QRcode', 'shanyue' ) . '<img src="' . $wechat_value . '"/>';
+		echo '<a><i class="fa fa-wechat"></i>' . __( 'QRcode', 'shanyue' ) . '<img src="' . $wechat_value . '"/>' . '</a>';
 	}
 }
 
@@ -162,7 +162,8 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 function shanyue_customize_partial_header_facebook() {
 	$facebook_value = get_theme_mod( 'shanyue_header_facebook_value' );
 	if ( $facebook_value != '' ) {
-		echo '<i class="fa fa-facebook"></i>' . '<a href="' . $facebook_value . '" target="_blank">' . __( 'Access Facebook', 'shanyue' ) . '</a>';
+		echo '<a href="' . $facebook_value . '" target="_blank"><i class="fa fa-facebook"></i>' . __( 'Access Facebook', 'shanyue' ) . '</a>';
 	}
 }
+
 ?>
