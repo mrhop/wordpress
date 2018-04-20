@@ -1,0 +1,49 @@
+http://www.panduoduo.net 网盘搜索
+
+66页 Exploring the Core
+
+https://codex.wordpress.org/Glossary [关键词]
+
+https://codex.wordpress.org/Codex:Quick_index
+
+https://codex.wordpress.org/Special:Search
+
+https://codex.wordpress.org/Function_Reference
+
+http://codex.wordpress.org/Template_Tags
+
+
+深入是一个逐步的过程
+
+
+STATISTICS COUNTERS
+411页
+
+
+
+http://www.shejidaren.com/%E5%9C%A8%E7%BA%BF%E9%85%8D%E8%89%B2%E5%B7%A5%E5%85%B7.html
+
+https://color.adobe.com/explore/?filter=most-popular&time=month
+
+https://www.imsxm.com/jetbrains-license-server.html
+
+https://wordpress.org/themes/erzen/
+
+http://demo.wpshopmart.com/erzen-lite/
+
+
+
+1.多开微信
+2.多开facebook
+
+采用page_section的方式，同时提供不同的类型，比如slider，再比如features，同时做级联和自定制（publish能否给取消掉，只作为审核状态出现）
+
+
+1.type select（slider，features）
+2.pageDropdown  https://codex.wordpress.org/Function_Reference/wp_dropdown_pages
+3.uploadfile   https://jeroensormani.com/how-to-include-the-wordpress-media-selector-in-your-plugin/
+4.link（page or link）
+5.group_slug text
+
+custom upload field   https://code.tutsplus.com/articles/attaching-files-to-your-posts-using-wordpress-custom-meta-boxes-part-1--wp-22291
+

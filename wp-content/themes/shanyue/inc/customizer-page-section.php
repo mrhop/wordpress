@@ -56,7 +56,7 @@ function shanyue_page_sections_meta_box( $post ) {
 	wp_nonce_field( 'meta-box-save', 'shanyue' );
 
 	// display meta box form
-	echo '<table>';
+	echo '<table class="shanyue-page-sections">';
 	echo '<tr>';
 	echo '<td>' . __( 'Type', 'shanyue' ) . ':</td><td><select name="shanyue_page_sections[type]" id="shanyue_page_sections[type]">
             <option value="slider"' . selected( $ps_type, 'slider', false ) . '>' . __( 'Slider', 'shanyue' ) . '</option>
