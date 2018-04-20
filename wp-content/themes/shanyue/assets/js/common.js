@@ -87,10 +87,22 @@ var commons = {
                 document.querySelector('#primary-menu').classList.add('opened');
             }
         });
+    },
+    windowScroll: function windowScroll() {
+        window.addEventListener('scroll', function () {
+            if (document.documentElement.scrollTop >= 40) {
+                document.querySelector('#masthead').classList.add('scroll-down');
+                document.querySelector('#content').classList.add('scroll-down');
+            } else {
+                document.querySelector('#masthead').classList.remove('scroll-down');
+                document.querySelector('#content').classList.remove('scroll-down');
+            }
+        });
     }
 };
 document.addEventListener('DOMContentLoaded', function () {
     commons.navbarToggle();
+    commons.windowScroll();
 });
 
 /***/ })

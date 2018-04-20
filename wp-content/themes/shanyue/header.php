@@ -38,7 +38,7 @@
 								?>
                                 <a href="mailto:<?php echo $shanyue_header_email_value ?>">
                                     <i class="fa fa-envelope"></i>
-									<span><?php echo $shanyue_header_email_value ?></span></a>
+                                    <span><?php echo $shanyue_header_email_value ?></span></a>
 							<?php } ?>
                         </div>
                         <div class="phone">
@@ -78,16 +78,15 @@
                 <div class="site-branding col col-3">
                     <div class="brand-band">
 						<?php
-						the_custom_logo();
-						if ( is_front_page() && is_home() ) :
+						$custom_logo_id = get_theme_mod( 'custom_logo' );
+						if ( $custom_logo_id ):
+							$image = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 							?>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                               rel="home"><img src="<?php echo $image[0]; ?>" style="height: 68px;"></a>
+						<?php else : ?>
                             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
                                                       rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php
-						else :
-							?>
-                            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                                                     rel="home"><?php bloginfo( 'name' ); ?></a></p>
 						<?php endif; ?>
                     </div>
 					<?php

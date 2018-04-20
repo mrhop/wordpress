@@ -3756,11 +3756,13 @@ a:not([href]):not([tabindex]) {
 
 header#masthead {
   box-shadow: 0px 0px 10px #6c757d;
-  font-size: .9rem; }
+  font-size: .9rem;
+  background: #fff;
+  width: 100%; }
   header#masthead .top-info {
-    padding: 10px 0 20px; }
+    padding: 10px 0 10px; }
     @media (max-width: 768px) {
-      header#masthead .top-info {
+      header#masthead .top-info .welcome {
         display: none; } }
     header#masthead .top-info .contact {
       z-index: 2;
@@ -3781,9 +3783,13 @@ header#masthead {
           display: none;
           width: 150px;
           position: absolute; }
-  @media (max-width: 768px) {
-    header#masthead .brand-nav {
-      padding-top: 20px; } }
+          @media (max-width: 768px) {
+            header#masthead .top-info .contact > div.wechat img {
+              right: 0; } }
+      @media (max-width: 768px) {
+        header#masthead .top-info .contact {
+          max-width: 100%;
+          flex: none; } }
   header#masthead .brand-nav .site-branding .brand-band {
     display: flex;
     justify-content: flex-start;
@@ -3804,11 +3810,14 @@ header#masthead {
     justify-content: flex-end; }
     header#masthead .brand-nav #site-navigation #primary-menu {
       padding-left: 0;
+      margin-bottom: 0;
       list-style: none; }
       header#masthead .brand-nav #site-navigation #primary-menu li {
         display: inline-block; }
         header#masthead .brand-nav #site-navigation #primary-menu li a {
-          padding: 1rem;
+          transition: all 400ms linear;
+          display: inline-block;
+          padding: 2rem 1rem;
           border-bottom: 4px solid transparent;
           font-weight: bold;
           font-size: 18px; }
@@ -3852,6 +3861,27 @@ header#masthead {
       @media (max-width: 768px) {
         header#masthead .brand-nav #site-navigation button.toggle {
           display: block; } }
+  header#masthead.scroll-down {
+    position: fixed;
+    width: 100%; }
+    header#masthead.scroll-down .top-info {
+      display: none; }
+    header#masthead.scroll-down .brand-nav .site-branding .site-description {
+      display: none; }
+    header#masthead.scroll-down .brand-nav #site-navigation #primary-menu li a {
+      padding-top: 1em;
+      padding-bottom: 1em; }
+
+#content.scroll-down {
+  padding-top: 176px; }
+
+#colophon {
+  padding: 30px 0;
+  background: #454445; }
+  #colophon .site-info {
+    text-align: center; }
+    #colophon .site-info a {
+      color: #F5F2DC; }
 
 
 /*# sourceMappingURL=vendors.css.map*/

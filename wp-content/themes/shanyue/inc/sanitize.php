@@ -3,63 +3,6 @@
  * Sanitizing the select callback example
  *
  */
-if ( !function_exists('shanyue_slider_sanitize_select') ) :
-    function shanyue_slider_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
- 
-if ( !function_exists('shanyue_aboutus_sanitize_select') ) :
-    function shanyue_aboutus_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
-
-if ( !function_exists('shanyue_services_sanitize_select') ) :
-    function shanyue_services_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
-
-
-if ( !function_exists('shanyue_col_layout_sanitize_select') ) :
-    function shanyue_col_layout_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
-
 
 if ( !function_exists('shanyue_header_sanitize_select') ) :
     function shanyue_header_sanitize_select( $input, $setting ) {
@@ -75,75 +18,6 @@ if ( !function_exists('shanyue_header_sanitize_select') ) :
     }
 endif;
 
-if ( !function_exists('shanyue_footer_sanitize_select') ) :
-    function shanyue_footer_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
-
-if ( !function_exists('shanyue_blog_sanitize_select') ) :
-    function shanyue_blog_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
-
-if ( !function_exists('shanyue_contact1_sanitize_select') ) :
-    function shanyue_contact1_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
-
-if ( !function_exists('shanyue_contact2_sanitize_select') ) :
-    function shanyue_contact2_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
-
-if ( !function_exists('shanyue_pagecallout_sanitize_select') ) :
-    function shanyue_pagecallout_sanitize_select( $input, $setting ) {
-
-        // Ensure input is a slug.
-        $input = sanitize_text_field( $input );
-
-        // Get list of choices from the control associated with the setting.
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        // If the input is a valid key, return it; otherwise, return the default.
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
-endif;
 
 
 /**

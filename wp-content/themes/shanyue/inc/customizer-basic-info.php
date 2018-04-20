@@ -1,5 +1,5 @@
 <?php
-// Header Section
+// basic info setting
 $wp_customize->add_section( 'shanyue-header_info', array(
 	'title'       => __( 'Top Header Section', 'shanyue' ),
 	'description' => '',

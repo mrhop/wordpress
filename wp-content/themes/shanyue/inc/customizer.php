@@ -32,7 +32,7 @@ function shanyue_customize_register( $wp_customize ) {
 		      'priority' => 3,));
 	require get_template_directory() . '/inc/theme-options.php';
 	require get_template_directory() . '/inc/sanitize.php';
-	require get_template_directory() . '/inc/customizer-header-sectioninfo.php';
+	require get_template_directory() . '/inc/customizer-basic-info.php';
 }
 
 add_action( 'customize_register', 'shanyue_customize_register' );

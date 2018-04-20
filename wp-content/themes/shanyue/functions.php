@@ -147,9 +147,19 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+add_theme_support post-formats
+ **/
+add_theme_support( 'post-formats', array(
+	'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+) );
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// for custom page parts
+require get_template_directory() . '/inc/customizer-page-section.php';
+
 
