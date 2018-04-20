@@ -14,7 +14,7 @@ http://codex.wordpress.org/Template_Tags
 
 
 深入是一个逐步的过程
-
+admin_enqueue_scripts-- 添加admin js和style
 
 STATISTICS COUNTERS
 411页
