@@ -46,4 +46,5 @@ http://demo.wpshopmart.com/erzen-lite/
 5.group_slug text
 
 custom upload field   https://code.tutsplus.com/articles/attaching-files-to-your-posts-using-wordpress-custom-meta-boxes-part-1--wp-22291
+https://codex.wordpress.org/Javascript_Reference/wp.media
 

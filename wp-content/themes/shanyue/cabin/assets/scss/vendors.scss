@@ -50,6 +50,7 @@ header#masthead {
   width: 100%;
   .top-info {
     padding: 10px 0 10px;
+    font-size: .7rem;
     .welcome {
       @media (max-width: map_get($grid-breakpoints, "md")) {
         display: none;

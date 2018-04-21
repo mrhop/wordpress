@@ -131,6 +131,16 @@ function shanyue_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'shanyue_scripts' );
 
+
+/**
+ * Enqueue admin scripts and styles.
+ */
+function shanyue_admin_theme_style() {
+	wp_enqueue_style( 'shanyue-admin-css', get_template_directory_uri() . '/assets/css/admin.css' );
+}
+
+add_action( 'admin_enqueue_scripts', 'shanyue_admin_theme_style' );
+
 /**
  * Custom template tags for this theme.
  */
@@ -147,10 +157,16 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
-add_theme_support post-formats
+ * add_theme_support post-formats
  **/
 add_theme_support( 'post-formats', array(
-	'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+	'aside',
+	'image',
+	'video',
+	'audio',
+	'quote',
+	'link',
+	'gallery',
 ) );
 /**
  * Load Jetpack compatibility file.

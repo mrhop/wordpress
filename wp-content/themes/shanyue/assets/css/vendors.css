@@ -3760,7 +3760,8 @@ header#masthead {
   background: #fff;
   width: 100%; }
   header#masthead .top-info {
-    padding: 10px 0 10px; }
+    padding: 10px 0 10px;
+    font-size: .7rem; }
     @media (max-width: 768px) {
       header#masthead .top-info .welcome {
         display: none; } }
