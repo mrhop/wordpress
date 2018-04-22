@@ -84,6 +84,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_admin_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_admin_scss__WEBPACK_IMPORTED_MODULE_0__);
 
 
+var admin = {
+            customMedia: function customMedia() {
+                        var frame = void 0,
+                            metaBox = document.querySelector('.shanyue-page-sections'),
+                            addImgLink = metaBox.find('.upload-custom-img'),
+                            delImgLink = metaBox.find('.delete-custom-img'),
+                            imgContainer = metaBox.find('.custom-img-container'),
+                            imgIdInput = metaBox.find('.custom-img-id');
+                        addImgLink.addEventListener('click', function (event) {
+
+                                    event.preventDefault();
+
+                                    if (frame) {
+                                                frame.open();
+                                                return;
+                                    }
+
+                                    frame = wp.media({
+                                                title: 'Select or Upload Media',
+                                                button: {
+                                                            text: 'Use this media'
+                                                },
+                                                multiple: false });
+
+                                    frame.on('select', function () {
+                                                var attachment = frame.state().get('selection').first().toJSON();
+
+                                                imgContainer.append('<img src="' + attachment.url + '" alt="" style="max-width:100%;"/>');
+
+                                                imgIdInput.value = attachment.id;
+
+                                                addImgLink.classList.add('hidden');
+
+                                                delImgLink.classList.remove('hidden');
+                                    });
+
+                                    frame.open();
+                        });
+                        delImgLink.addEventListener('click', function (event) {
+
+                                    event.preventDefault();
+
+                                    imgContainer.innerHTML = '';
+
+                                    addImgLink.classList.remove('hidden');
+
+                                    delImgLink.classList.add('hidden');
+                                    imgIdInput.value = '';
+                        });
+            }
+};
+document.addEventListener('DOMContentLoaded', function () {
+            admin.customMedia();
+});
+
 /***/ }),
 
 /***/ "./assets/scss/admin.scss":

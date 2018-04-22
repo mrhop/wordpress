@@ -42,15 +42,24 @@ add_action( 'after_setup_theme', 'shanyue_page_sections_init' );
 
 
 function shanyue_page_sections_meta_box( $post ) {
+	wp_enqueue_media();
 
 	// retrieve our custom meta box values
 	$ps_meta = get_post_meta( $post->ID, '_shanyue_page_sections_data', true );
 
 	$ps_type         = ( ! empty( $ps_meta['type'] ) ) ? $ps_meta['type'] : '';
 	$ps_page_belong  = ( ! empty( $ps_meta['pageBelong'] ) ) ? $ps_meta['pageBelong'] : '';
-	$ps_file_link    = ( ! empty( $ps_meta['fileLink'] ) ) ? $ps_meta['fileLink'] : '';
+	$ps_file_link_id = ( ! empty( $ps_meta['fileLinkId'] ) ) ? $ps_meta['fileLinkId'] : '';
 	$ps_page_related = ( ! empty( $ps_meta['pageRelated'] ) ) ? $ps_meta['pageRelated'] : '';
 	$ps_group_slug   = ( ! empty( $ps_meta['groupSlug'] ) ) ? $ps_meta['groupSlug'] : '';
+
+
+	$upload_link = esc_url( get_upload_iframe_src( null, $post->ID ) );
+
+	$ps_file_link = wp_get_attachment_image_src( $ps_file_link_id, 'full' );
+
+	$ps_file_exist = is_array( $ps_file_link );
+
 
 	//nonce field for security
 	wp_nonce_field( 'meta-box-save', 'shanyue' );
@@ -70,8 +79,32 @@ function shanyue_page_sections_meta_box( $post ) {
 	) );
 	echo '</td>';
 	echo '</tr><tr>';
-	echo '<td>' . __( 'File Link', 'shanyue' ) . ':</td><td><input type="text" name="shanyue_page_sections[fileLink]" value="' . esc_attr( $ps_file_link ) . '" ></td>';
-	echo '</tr><tr>';
+	echo '<td>' . __( 'File Link', 'shanyue' ) . ':</td><td>'
+?>
+
+	<!-- Your image container, which can be manipulated with js -->
+	<div class="custom-img-container">
+		<?php if ( $ps_file_exist ) : ?>
+			<img src="<?php echo $ps_file_link[0] ?>" alt="" style="max-width:100%;" />
+		<?php endif; ?>
+	</div>
+
+	<!-- Your add & remove image links -->
+	<p class="hide-if-no-js">
+		<a class="upload-custom-img <?php if ( $ps_file_exist  ) { echo 'hidden'; } ?>"
+		   href="<?php echo $upload_link ?>">
+			<?php _e('Set custom image', 'shanyue') ?>
+		</a>
+		<a class="delete-custom-img <?php if ( ! $ps_file_exist  ) { echo 'hidden'; } ?>"
+		   href="#">
+			<?php _e('Remove this image', 'shanyue') ?>
+		</a>
+	</p>
+
+	<!-- A hidden input to set and post the chosen image id -->
+	<input class="custom-image-id" name="shanyue_page_sections[fileLinkId]" type="hidden" value="<?php echo esc_attr( $ps_file_link_id ); ?>" />
+<?php
+	echo '</td></tr><tr>';
 	echo '<td>' . __( 'Page Related', 'shanyue' ) . ':</td><td>';
 	wp_dropdown_pages( array(
 		'selected' => $ps_page_related,
