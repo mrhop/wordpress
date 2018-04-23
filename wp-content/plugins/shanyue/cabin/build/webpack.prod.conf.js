@@ -17,14 +17,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         splitChunks: {
             cacheGroups: {
                 initial: {
-                    test: /[\\/]node_modules[\\/].*\.js/,
+                    test: /[\\/]node_modules[\\/]/,
                     chunks: 'initial',
                     name: 'initial',
                     filename: 'js/initial.js',
                     priority: -10
                 },
                 vendors: {
-                    test: /[\\/]node_modules[\\/].*\.js/,
+                    test: /[\\/]node_modules[\\/]/,
                     name: 'vendors',
                     chunks: 'async',
                     filename: 'js/vendors.js',
