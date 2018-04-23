@@ -3,13 +3,20 @@
     [
       "env",
       {
-        "modules": false
+//        "modules": false
       }
     ],
     "stage-2"
   ],
   "plugins": [
-    "transform-runtime"
-  ],
+  [
+    "transform-runtime",
+    {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true
+    }
+  ]
+],
   "comments": false
 }

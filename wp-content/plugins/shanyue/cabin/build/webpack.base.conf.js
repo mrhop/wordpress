@@ -34,7 +34,6 @@ module.exports = {
             {
                 test: /\.js[x]?$/,
                 loader: 'babel-loader',
-                include: [resolve('./assets/js')]
             },
             {
                 test: /^\.(png|jpe?g|gif|svg)(\?.*)?$/,
