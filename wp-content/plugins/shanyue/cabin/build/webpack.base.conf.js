@@ -9,7 +9,7 @@ let assetFontOutputPath = utils.assetsPath('/');
 let assetImgPublicPath = utils.assetsPath('../');
 let assetFontPublicPath = utils.assetsPath('../');
 module.exports = {
-    entry: Object.assign(utils.getEntries('./assets/js/*.js'), utils.getEntries('./assets/scss/*-alone.scss')),
+    entry: Object.assign(utils.getEntries('./assets/js/*.js')),
     output: {
         path: config.assetsRoot,
         filename: '[name].js'
@@ -34,7 +34,7 @@ module.exports = {
             {
                 test: /\.js[x]?$/,
                 loader: 'babel-loader',
-                // include: [resolve('./assets/js')]
+                include: [resolve('./assets/js')]
             },
             {
                 test: /^\.(png|jpe?g|gif|svg)(\?.*)?$/,

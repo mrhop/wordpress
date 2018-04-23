@@ -1,3 +1,6 @@
+import '../scss/common.scss'
+import Swiper from 'swiper';
+
 const commons = {
     navbarToggle: () => {
         document.querySelector('#site-navigation button.toggle').addEventListener('click', function () {
@@ -18,9 +21,13 @@ const commons = {
                 document.querySelector('#content').classList.remove('scroll-down')
             }
         })
+    },
+    slider: () => {
+        var swiper = new Swiper('.swiper-container', {});
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
     commons.navbarToggle()
     commons.windowScroll()
+    commons.slider()
 })

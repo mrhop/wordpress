@@ -117,7 +117,7 @@ add_action( 'widgets_init', 'shanyue_widgets_init' );
 function shanyue_scripts() {
 	wp_enqueue_style( 'shanyue-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'shanyue-vendors-css', get_template_directory_uri() . '/assets/css/vendors.css' );
+	wp_enqueue_style( 'shanyue-common-css', get_template_directory_uri() . '/assets/css/common.css' );
 
 	wp_enqueue_script( 'shanyue-initial-js', get_template_directory_uri() . '/assets/js/initial.js', array(), '', true );
 	wp_enqueue_script( 'shanyue-common-js', get_template_directory_uri() . '/assets/js/common.js', array(), '', true );
@@ -131,15 +131,6 @@ function shanyue_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'shanyue_scripts' );
 
-
-/**
- * Enqueue admin scripts and styles.
- */
-function shanyue_admin_theme_style() {
-	wp_enqueue_style( 'shanyue-admin-css', get_template_directory_uri() . '/assets/css/admin.css' );
-}
-
-add_action( 'admin_enqueue_scripts', 'shanyue_admin_theme_style' );
 
 /**
  * Custom template tags for this theme.
@@ -174,8 +165,4 @@ add_theme_support( 'post-formats', array(
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-// for custom page parts
-require get_template_directory() . '/inc/customizer-page-section.php';
-
 
