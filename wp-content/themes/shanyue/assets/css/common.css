@@ -4494,7 +4494,7 @@ header#masthead {
       padding-bottom: 1em; }
 
 #content.scroll-down {
-  padding-top: 176px; }
+  padding-top: 108px; }
 
 #colophon {
   padding: 30px 0;
@@ -4503,6 +4503,122 @@ header#masthead {
     text-align: center; }
     #colophon .site-info a {
       color: #F5F2DC; }
+
+.swiper-container .swiper-wrapper .swiper-slide {
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  color: #fff; }
+  .swiper-container .swiper-wrapper .swiper-slide > img {
+    height: 600px;
+    width: 100%; }
+  .swiper-container .swiper-wrapper .swiper-slide .text-wrapper {
+    position: absolute;
+    left: 150px;
+    top: 150px; }
+    .swiper-container .swiper-wrapper .swiper-slide .text-wrapper p {
+      margin-top: 1rem; }
+    .swiper-container .swiper-wrapper .swiper-slide .text-wrapper a {
+      margin-top: 1rem;
+      padding: 0.5em 1rem;
+      display: inline-block;
+      color: #fff;
+      background: #009494; }
+      .swiper-container .swiper-wrapper .swiper-slide .text-wrapper a:hover {
+        background: #00585E; }
+  @media (max-width: 992px) {
+    .swiper-container .swiper-wrapper .swiper-slide {
+      height: 450px; }
+      .swiper-container .swiper-wrapper .swiper-slide > img {
+        width: auto;
+        height: 450px; }
+      .swiper-container .swiper-wrapper .swiper-slide .text-wrapper {
+        left: 110px;
+        top: 80px; }
+        .swiper-container .swiper-wrapper .swiper-slide .text-wrapper p {
+          margin-top: .5rem;
+          margin-bottom: .5rem; }
+        .swiper-container .swiper-wrapper .swiper-slide .text-wrapper a {
+          margin-top: 0.5rem; } }
+  @media (max-width: 768px) {
+    .swiper-container .swiper-wrapper .swiper-slide {
+      height: 300px; }
+      .swiper-container .swiper-wrapper .swiper-slide > img {
+        width: auto;
+        height: 300px; }
+      .swiper-container .swiper-wrapper .swiper-slide .text-wrapper {
+        left: 80px;
+        top: 30px; }
+        .swiper-container .swiper-wrapper .swiper-slide .text-wrapper p {
+          margin-top: 0;
+          margin-bottom: 0; }
+        .swiper-container .swiper-wrapper .swiper-slide .text-wrapper a {
+          margin-top: 0.5rem; } }
+
+.swiper-container .swiper-button {
+  background: none;
+  color: #fff; }
+  .swiper-container .swiper-button:hover {
+    color: #009494; }
+  .swiper-container .swiper-button.swiper-button-next {
+    right: 15px; }
+
+.features {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: auto;
+  padding-left: 0;
+  list-style: none; }
+  .features .column {
+    cursor: pointer;
+    margin-bottom: 20px; }
+    .features .column i {
+      margin-bottom: 20px; }
+    .features .column:hover i {
+      color: #009494; }
+
+body.home div.contact-us {
+  color: #fff;
+  background: #009494;
+  padding: 40px 0; }
+  body.home div.contact-us .row {
+    margin: auto; }
+    body.home div.contact-us .row .column {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px; }
+      body.home div.contact-us .row .column ul {
+        list-style: none;
+        padding-left: 0; }
+        body.home div.contact-us .row .column ul li {
+          margin-bottom: 10px; }
+        body.home div.contact-us .row .column ul a {
+          color: #fff; }
+          body.home div.contact-us .row .column ul a:hover {
+            color: #454445; }
+      body.home div.contact-us .row .column .wechat-div {
+        margin-left: 20px; }
+        body.home div.contact-us .row .column .wechat-div img.wechat-qrcode {
+          height: 200px; }
+      body.home div.contact-us .row .column:first-child {
+        border-right: 2px solid; }
+
+body.page-template-default main.site-main {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  body.page-template-default main.site-main .entry-title {
+    box-shadow: 0px 3px 10px #6c757d;
+    padding: 3px 10px;
+    color: #F5F2DC;
+    background: #454445; }
+  body.page-template-default main.site-main img.page-feature-img {
+    width: 100% !important;
+    height: 300px;
+    margin: 20px 0; }
 
 
 /*# sourceMappingURL=common.css.map*/

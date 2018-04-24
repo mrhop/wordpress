@@ -1,1 +1,171 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:r})},n.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=2)}([,function(e,t,n){},function(e,t,n){"use strict";n.r(t);n(1);var r=function(){var e=document.querySelector(".shanyue-page-sections");if(e){var t=void 0,n=e.querySelector(".upload-custom-img"),r=e.querySelector(".delete-custom-img"),o=e.querySelector(".custom-img-container"),i=e.querySelector(".custom-img-id");n.addEventListener("click",function(e){e.preventDefault(),t?t.open():((t=wp.media({title:"Select or Upload Media",button:{text:"Use this media"},multiple:!1})).on("select",function(){var e=t.state().get("selection").first().toJSON();o.innerHTML='<img src="'+e.url+'" alt="" style="max-height:150px;"/>',i.value=e.id,n.classList.add("hidden"),r.classList.remove("hidden")}),t.open())}),r.addEventListener("click",function(e){e.preventDefault(),o.innerHTML="",n.classList.remove("hidden"),r.classList.add("hidden"),i.value=""})}};document.addEventListener("DOMContentLoaded",function(){r()})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/admin.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./assets/js/admin.js":
+/*!****************************!*\
+  !*** ./assets/js/admin.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! ../scss/admin.scss */ "./assets/scss/admin.scss");
+
+var admin = {
+    sectionPageTypeChange: function sectionPageTypeChange() {
+        document.getElementById('shanyue_page_sections[type]').addEventListener('change', function (event) {
+            if (event.target.value === 'feature') {
+                document.querySelector('.icon-class-tr').classList.remove('hidden');
+            } else {
+                document.querySelector('.icon-class-tr').classList.add('hidden');
+            }
+        });
+    },
+    mediaChoose: function mediaChoose() {
+        var metaBox = document.querySelector('.shanyue-page-sections');
+        if (metaBox) {
+            var frame = void 0,
+                addImgLink = metaBox.querySelector('.upload-custom-img'),
+                delImgLink = metaBox.querySelector('.delete-custom-img'),
+                imgContainer = metaBox.querySelector('.custom-img-container'),
+                imgIdInput = metaBox.querySelector('.custom-img-id');
+
+            addImgLink.addEventListener('click', function (event) {
+
+                event.preventDefault();
+
+                if (frame) {
+                    frame.open();
+                    return;
+                }
+
+                frame = wp.media({
+                    title: 'Select or Upload Media',
+                    button: {
+                        text: 'Use this media'
+                    },
+                    multiple: false });
+
+                frame.on('select', function () {
+                    var attachment = frame.state().get('selection').first().toJSON();
+
+                    imgContainer.innerHTML = '<img src="' + attachment.url + '" alt="" style="max-height:150px;"/>';
+
+                    imgIdInput.value = attachment.id;
+
+                    addImgLink.classList.add('hidden');
+
+                    delImgLink.classList.remove('hidden');
+                });
+
+                frame.open();
+            });
+
+            delImgLink.addEventListener('click', function (event) {
+
+                event.preventDefault();
+
+                imgContainer.innerHTML = '';
+
+                addImgLink.classList.remove('hidden');
+
+                delImgLink.classList.add('hidden');
+
+                imgIdInput.value = '';
+            });
+        }
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    admin.sectionPageTypeChange();
+    admin.mediaChoose();
+});
+
+/***/ }),
+
+/***/ "./assets/scss/admin.scss":
+/*!********************************!*\
+  !*** ./assets/scss/admin.scss ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=admin.js.map

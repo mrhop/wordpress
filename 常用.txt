@@ -48,5 +48,8 @@ http://demo.wpshopmart.com/erzen-lite/
 custom upload field   https://code.tutsplus.com/articles/attaching-files-to-your-posts-using-wordpress-custom-meta-boxes-part-1--wp-22291
 https://codex.wordpress.org/Javascript_Reference/wp.media
 
-继续实现media custom，然后完成整个网站 win.send_to_editor is not a function，js有错误
+https://fontawesome.com/icons [icons]
+
+到此页面
+category-products.php
 

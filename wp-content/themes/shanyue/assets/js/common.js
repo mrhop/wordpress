@@ -175,7 +175,13 @@ var commons = {
         });
     },
     slider: function slider() {
-        var swiper = new _swiper2.default('.swiper-container', {});
+        var swiper = new _swiper2.default('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            loop: true
+        });
     }
 };
 document.addEventListener('DOMContentLoaded', function () {

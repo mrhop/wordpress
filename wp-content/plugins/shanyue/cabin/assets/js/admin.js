@@ -1,6 +1,15 @@
 import '../scss/admin.scss'
 
 const admin = {
+    sectionPageTypeChange: () => {
+        document.getElementById('shanyue_page_sections[type]').addEventListener('change', (event) => {
+            if (event.target.value === 'feature') {
+                document.querySelector('.icon-class-tr').classList.remove('hidden');
+            } else {
+                document.querySelector('.icon-class-tr').classList.add('hidden');
+            }
+        })
+    },
     mediaChoose: () => {
         let metaBox = document.querySelector('.shanyue-page-sections')
         if (metaBox) {
@@ -80,5 +89,6 @@ const admin = {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    admin.mediaChoose()
+    admin.sectionPageTypeChange();
+    admin.mediaChoose();
 })
