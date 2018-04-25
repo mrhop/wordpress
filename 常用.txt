@@ -53,3 +53,10 @@ https://fontawesome.com/icons [icons]
 到此页面
 category-products.php
 
+jetpack plugin
+infinity.php
+bug: [不能添加日期限制]
+	add_filter( 'posts_where', array( $this, 'query_time_filter' ), 10, 2 );
+	remove_filter( 'posts_where', array( $this, 'query_time_filter' ), 10, 2 );
+
+

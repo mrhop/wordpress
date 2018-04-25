@@ -230,6 +230,16 @@ header#masthead {
   }
 }
 
+#main-content {
+  position: relative;
+  .infinite-loader {
+    position: absolute;
+    bottom: -10px;
+    margin-left: -15px;
+    left: 50%;
+  }
+}
+
 .swiper-container {
   .swiper-wrapper {
     .swiper-slide {
@@ -381,11 +391,50 @@ body.page-template-default {
       padding: 3px 10px;
       color: #F5F2DC;
       background: #454445;
+      margin-bottom: 20px;
     }
     img.page-feature-img {
       width: 100% !important;
       height: 300px;
-      margin: 20px 0;
+    }
+    .entry-content {
+      margin-top: 20px;
+    }
+  }
+}
+
+body.archive {
+  main.site-main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .page-title {
+      box-shadow: 0px 3px 10px $gray-600;
+      padding: 3px 10px;
+      color: #F5F2DC;
+      background: #454445;
+      margin-bottom: 20px;
+    }
+    div.products-content {
+      margin-left: -8px;
+      margin-right: -8px;
+      .column {
+        padding-left: 8px;
+        padding-right: 8px;
+        .product-thumbnail {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        h3 {
+          line-height: 1.1;
+          margin-bottom: 0;
+        }
+        span.comments-link {
+          font-size: .8rem;
+        }
+        margin-bottom: 20px;
+      }
     }
   }
 }

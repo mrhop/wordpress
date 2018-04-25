@@ -17,9 +17,10 @@
 function shanyue_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
+		'container' => 'main-content',
 		'render'    => 'shanyue_infinite_scroll_render',
 		'footer'    => 'page',
+		'wrapper'   => false
 	) );
 
 	// Add theme support for Responsive Videos.
@@ -36,12 +37,13 @@ function shanyue_jetpack_setup() {
 			'comment'    => '.comments-link',
 		),
 		'featured-images' => array(
-			'archive'    => true,
-			'post'       => true,
-			'page'       => true,
+			'archive' => true,
+			'post'    => true,
+			'page'    => true,
 		),
 	) );
 }
+
 add_action( 'after_setup_theme', 'shanyue_jetpack_setup' );
 
 /**
@@ -50,8 +52,19 @@ add_action( 'after_setup_theme', 'shanyue_jetpack_setup' );
 function shanyue_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
+		$categories = get_the_category();
+		if ( is_array( $categories ) ) {
+			foreach ( $categories as $category ) {
+				if ( 'products' == $category->slug ) {
+					$is_product = true;
+					break;
+				}
+			}
+		}
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
+		elseif ( $is_product ):
+			get_template_part( 'template-parts/content', 'products' );
 		else :
 			get_template_part( 'template-parts/content', get_post_type() );
 		endif;

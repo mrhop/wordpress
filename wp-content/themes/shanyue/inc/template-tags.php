@@ -25,7 +25,7 @@ if ( ! function_exists( 'shanyue_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			/* translators: %s: post date. */
+		/* translators: %s: post date. */
 			esc_html_x( 'Posted on %s', 'post date', 'shanyue' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
@@ -41,7 +41,7 @@ if ( ! function_exists( 'shanyue_posted_by' ) ) :
 	 */
 	function shanyue_posted_by() {
 		$byline = sprintf(
-			/* translators: %s: post author. */
+		/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'shanyue' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
@@ -78,7 +78,7 @@ if ( ! function_exists( 'shanyue_entry_footer' ) ) :
 			comments_popup_link(
 				sprintf(
 					wp_kses(
-						/* translators: %s: post title */
+					/* translators: %s: post title */
 						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'shanyue' ),
 						array(
 							'span' => array(
@@ -95,7 +95,53 @@ if ( ! function_exists( 'shanyue_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
+				/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'shanyue' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+endif;
+if ( ! function_exists( 'shanyue_product_footer' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function shanyue_product_footer() {
+
+		echo '<h3 class="product-title">';
+		the_title();
+		echo '</h3>';
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link(
+				sprintf(
+					wp_kses(
+					/* translators: %s: post title */
+						__( 'Leave a Comment', 'shanyue' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					)
+				)
+			);
+			echo '</span>';
+		}
+
+
+		edit_post_link(
+			sprintf(
+				wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'shanyue' ),
 					array(
 						'span' => array(
@@ -118,7 +164,7 @@ if ( ! function_exists( 'shanyue_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function shanyue_post_thumbnail() {
+	function shanyue_post_thumbnail( $size = 'post-thumbnail' ) {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -126,21 +172,21 @@ if ( ! function_exists( 'shanyue_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+            <div class="post-thumbnail">
+				<?php the_post_thumbnail( $size ); ?>
+            </div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
-			?>
-		</a>
+            <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+				<?php
+				the_post_thumbnail( $size, array(
+					'alt' => the_title_attribute( array(
+						'echo' => false,
+					) ),
+				) );
+				?>
+            </a>
 
 		<?php
 		endif; // End is_singular().

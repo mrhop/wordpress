@@ -4504,6 +4504,14 @@ header#masthead {
     #colophon .site-info a {
       color: #F5F2DC; }
 
+#main-content {
+  position: relative; }
+  #main-content .infinite-loader {
+    position: absolute;
+    bottom: -10px;
+    margin-left: -15px;
+    left: 50%; }
+
 .swiper-container .swiper-wrapper .swiper-slide {
   height: 600px;
   overflow: hidden;
@@ -4614,11 +4622,38 @@ body.page-template-default main.site-main {
     box-shadow: 0px 3px 10px #6c757d;
     padding: 3px 10px;
     color: #F5F2DC;
-    background: #454445; }
+    background: #454445;
+    margin-bottom: 20px; }
   body.page-template-default main.site-main img.page-feature-img {
     width: 100% !important;
-    height: 300px;
-    margin: 20px 0; }
+    height: 300px; }
+  body.page-template-default main.site-main .entry-content {
+    margin-top: 20px; }
+
+body.archive main.site-main {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  body.archive main.site-main .page-title {
+    box-shadow: 0px 3px 10px #6c757d;
+    padding: 3px 10px;
+    color: #F5F2DC;
+    background: #454445;
+    margin-bottom: 20px; }
+  body.archive main.site-main div.products-content {
+    margin-left: -8px;
+    margin-right: -8px; }
+    body.archive main.site-main div.products-content .column {
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-bottom: 20px; }
+      body.archive main.site-main div.products-content .column .product-thumbnail img {
+        width: 100%;
+        height: auto; }
+      body.archive main.site-main div.products-content .column h3 {
+        line-height: 1.1;
+        margin-bottom: 0; }
+      body.archive main.site-main div.products-content .column span.comments-link {
+        font-size: .8rem; }
 
 
 /*# sourceMappingURL=common.css.map*/
