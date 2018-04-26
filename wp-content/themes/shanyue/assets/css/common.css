@@ -4586,6 +4586,45 @@ header#masthead {
     .features .column:hover i {
       color: #009494; }
 
+#comments {
+  border: 3px solid #ced4da;
+  padding: 10px; }
+  #comments h3#reply-title {
+    font-size: 1.2rem; }
+  #comments .comment-form {
+    font-size: .9rem; }
+    #comments .comment-form p {
+      display: flex;
+      align-items: center; }
+      #comments .comment-form p label {
+        width: 100px; }
+      #comments .comment-form p input, #comments .comment-form p textarea {
+        width: 245px; }
+      #comments .comment-form p input[type='submit'] {
+        width: auto;
+        padding: 2px 10px;
+        background: #00585E;
+        color: #F5F2DC;
+        cursor: pointer;
+        box-shadow: none;
+        border: none; }
+      #comments .comment-form p #comment {
+        height: 80px; }
+
+nav.post-navigation {
+  margin: 10px 0; }
+  nav.post-navigation h2.screen-reader-text {
+    display: none; }
+  nav.post-navigation div.nav-links {
+    display: flex;
+    justify-content: space-between; }
+    nav.post-navigation div.nav-links a {
+      display: flex;
+      font-size: .9rem; }
+      nav.post-navigation div.nav-links a i {
+        margin: 0 5px;
+        font-size: 1.4rem; }
+
 body.home div.contact-us {
   color: #fff;
   background: #009494;
@@ -4616,7 +4655,7 @@ body.home div.contact-us {
         border-right: 2px solid; }
 
 body.page-template-default main.site-main {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px; }
   body.page-template-default main.site-main .entry-title {
     box-shadow: 0px 3px 10px #6c757d;
@@ -4631,7 +4670,7 @@ body.page-template-default main.site-main {
     margin-top: 20px; }
 
 body.archive main.site-main {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px; }
   body.archive main.site-main .page-title {
     box-shadow: 0px 3px 10px #6c757d;
@@ -4645,15 +4684,105 @@ body.archive main.site-main {
     body.archive main.site-main div.products-content .column {
       padding-left: 8px;
       padding-right: 8px;
+      text-align: center;
       margin-bottom: 20px; }
       body.archive main.site-main div.products-content .column .product-thumbnail img {
         width: 100%;
         height: auto; }
-      body.archive main.site-main div.products-content .column h3 {
-        line-height: 1.1;
-        margin-bottom: 0; }
-      body.archive main.site-main div.products-content .column span.comments-link {
-        font-size: .8rem; }
+      body.archive main.site-main div.products-content .column .product-footer {
+        margin-top: 10px; }
+        body.archive main.site-main div.products-content .column .product-footer h3 {
+          line-height: 1.1;
+          margin-bottom: 0;
+          font-size: 1.5rem; }
+        body.archive main.site-main div.products-content .column .product-footer > span {
+          font-size: .9rem;
+          display: block; }
+  body.archive main.site-main ul.news-content {
+    padding-left: 0;
+    list-style: none; }
+    body.archive main.site-main ul.news-content li {
+      display: flex;
+      padding: 5px 0;
+      padding: 5px 5px;
+      box-shadow: 0 1px 5px #adb5bd;
+      margin: 7px 0; }
+      body.archive main.site-main ul.news-content li:hover {
+        background: #dee2e6; }
+      body.archive main.site-main ul.news-content li i {
+        color: #FF5729;
+        font-size: 1rem;
+        margin-right: 3px; }
+      body.archive main.site-main ul.news-content li a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 760px; }
+        @media (max-width: 992px) {
+          body.archive main.site-main ul.news-content li a {
+            max-width: 500px; } }
+        @media (max-width: 768px) {
+          body.archive main.site-main ul.news-content li a {
+            max-width: 350px; } }
+      @media (max-width: 576px) {
+        body.archive main.site-main ul.news-content li time {
+          display: none; } }
+  body.archive main.site-main div.techs-content .column {
+    text-align: center; }
+    body.archive main.site-main div.techs-content .column .tech-content {
+      box-shadow: 5px 5px 10px #adb5bd;
+      padding: 10px;
+      background: rgba(0, 88, 94, 0.8);
+      color: #F5F2DC; }
+    body.archive main.site-main div.techs-content .column .tech-footer {
+      margin-top: 10px; }
+      body.archive main.site-main div.techs-content .column .tech-footer > span {
+        display: block;
+        overflow: hidden;
+        font-size: .9rem; }
+        body.archive main.site-main div.techs-content .column .tech-footer > span.tags-links a {
+          color: #F5F2DC;
+          background: #FF5729;
+          padding: 2px 5px; }
+
+body.single main.site-main {
+  padding-top: 20px;
+  padding-bottom: 40px; }
+  body.single main.site-main .entry-header .entry-title {
+    border-bottom: 2px solid;
+    padding: 3px 0;
+    margin-bottom: 3px; }
+    body.single main.site-main .entry-header .entry-title span.title {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 760px; }
+      @media (max-width: 992px) {
+        body.single main.site-main .entry-header .entry-title span.title {
+          max-width: 500px; } }
+      @media (max-width: 768px) {
+        body.single main.site-main .entry-header .entry-title span.title {
+          max-width: 350px; } }
+  body.single main.site-main .entry-header .entry-meta {
+    background: #ced4da;
+    font-size: .9rem; }
+    body.single main.site-main .entry-header .entry-meta a {
+      color: #FF5729; }
+    body.single main.site-main .entry-header .entry-meta span {
+      display: block;
+      padding: 2px 5px; }
+  body.single main.site-main .entry-content {
+    margin: 10px 0;
+    overflow: hidden; }
+    body.single main.site-main .entry-content img.img-thumbnail {
+      float: right;
+      margin-top: -1.5rem;
+      width: auto;
+      max-height: 200px;
+      border-bottom: 1px solid #adb5bd;
+      border-right: 1px solid #adb5bd;
+      height: 150px; }
 
 
 /*# sourceMappingURL=common.css.map*/

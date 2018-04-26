@@ -14,12 +14,16 @@
 		<?php
 		the_title( '<h1 class="entry-title"><span class="title" title="' . get_the_title() . '"> ', '</span></h1>' );
 		echo '<div class="entry-meta">';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_html( get_the_date( 'Y-m-d H:i' ) )
+		);
+		echo '<span>' . __( 'Post on ', 'shanyue' ) . $time_string . '</span>';
 		$categories_list = get_the_category_list( esc_html__( ', ', 'shanyue' ) );
 		if ( $categories_list ) {
 			printf( '<span class="cat-links">' . esc_html__( 'Categories: %1$s', 'shanyue' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
-
-		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'shanyue' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'shanyue' ) . '</span>', $tags_list ); // WPCS: XSS OK.

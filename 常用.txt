@@ -50,13 +50,17 @@ https://codex.wordpress.org/Javascript_Reference/wp.media
 
 https://fontawesome.com/icons [icons]
 
-到此页面
-category-products.php
 
+bug 处理 --------------------------------------------------------------------
 jetpack plugin
 infinity.php
 bug: [不能添加日期限制]
 	add_filter( 'posts_where', array( $this, 'query_time_filter' ), 10, 2 );
 	remove_filter( 'posts_where', array( $this, 'query_time_filter' ), 10, 2 );
 
+
+继续处理
+1.contact us
+2. tags的部分
+3. search widget
 

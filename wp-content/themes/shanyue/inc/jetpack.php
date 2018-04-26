@@ -58,6 +58,9 @@ function shanyue_infinite_scroll_render() {
 				if ( 'products' == $category->slug ) {
 					$is_product = true;
 					break;
+				} else if ( 'news' == $category->slug ) {
+					$is_news = true;
+					break;
 				}
 			}
 		}
@@ -65,6 +68,8 @@ function shanyue_infinite_scroll_render() {
 			get_template_part( 'template-parts/content', 'search' );
 		elseif ( $is_product ):
 			get_template_part( 'template-parts/content', 'products' );
+		elseif ( $is_news ):
+			get_template_part( 'template-parts/content', 'news' );
 		else :
 			get_template_part( 'template-parts/content', get_post_type() );
 		endif;

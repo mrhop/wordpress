@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="product-<?php the_ID(); ?>" class="product-wrapper">
+<article id="tech-<?php the_ID(); ?>" class="tech-wrapper">
     <header class="entry-header">
 		<?php
 		the_title( '<h1 class="entry-title"><span class="title" title="' . get_the_title() . '"> ', '</span></h1>' );
