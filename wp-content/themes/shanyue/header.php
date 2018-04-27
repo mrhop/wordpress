@@ -75,7 +75,7 @@
                 </div>
 			<?php } ?>
             <div class="brand-nav row">
-                <div class="site-branding col col-3">
+                <div class="site-branding col col-2">
                     <div class="brand-band">
 						<?php
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -96,7 +96,7 @@
                         <p class="site-description"><?php echo $shanyue_description; /* WPCS: xss ok. */ ?></p>
 					<?php endif; ?>
                 </div><!-- .site-branding -->
-                <nav id="site-navigation" class="main-navigation col col-9">
+                <nav id="site-navigation" class="main-navigation col col-10">
                     <button class="btn btn-primary toggle d-block d-sm-none"><i class="fa fa-bars"></i></button>
 					<?php
 					wp_nav_menu( array(
@@ -108,5 +108,4 @@
             </div>
         </div>
     </header><!-- #masthead -->
-
     <div id="content" class="site-content">

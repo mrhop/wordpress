@@ -22,10 +22,10 @@
 				?>
 			</a>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+		<?php get_search_form(); ?>
+    </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

@@ -58,9 +58,11 @@ bug: [不能添加日期限制]
 	add_filter( 'posts_where', array( $this, 'query_time_filter' ), 10, 2 );
 	remove_filter( 'posts_where', array( $this, 'query_time_filter' ), 10, 2 );
 
+class-wp-query.php [分析sql语句]
 
 继续处理
-1.contact us
-2. tags的部分
-3. search widget
+1.contact us done
+2. search widget
+3. tags的部分
+
 

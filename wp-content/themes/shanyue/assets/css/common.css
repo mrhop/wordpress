@@ -4430,6 +4430,7 @@ header#masthead {
     align-items: flex-end;
     justify-content: flex-end; }
     header#masthead .brand-nav #site-navigation #primary-menu {
+      z-index: 10;
       padding-left: 0;
       margin-bottom: 0;
       list-style: none; }
@@ -4503,6 +4504,36 @@ header#masthead {
     text-align: center; }
     #colophon .site-info a {
       color: #F5F2DC; }
+  #colophon .search-form {
+    display: inline-flex;
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    z-index: 20;
+    opacity: .8; }
+    #colophon .search-form .search-submit {
+      background: #FF5729;
+      margin-left: 5px; }
+    #colophon .search-form .search-field {
+      width: 0;
+      border-width: 0;
+      transition: all 200ms linear;
+      border-style: solid;
+      border-color: #FF5729;
+      background-color: #dee2e6;
+      padding: 0;
+      color: #454445;
+      outline: none; }
+    #colophon .search-form:hover {
+      opacity: 1; }
+      #colophon .search-form:hover .search-submit {
+        background: #c22a00; }
+      #colophon .search-form:hover .search-field {
+        border-width: 1px;
+        padding: 1px 10px;
+        width: 150px; }
+    #colophon .search-form.scroll-down {
+      top: 80px; }
 
 #main-content {
   position: relative; }
@@ -4596,6 +4627,10 @@ header#masthead {
     #comments .comment-form p {
       display: flex;
       align-items: center; }
+      #comments .comment-form p.comment-notes {
+        display: block; }
+        #comments .comment-form p.comment-notes span:first-child {
+          display: block; }
       #comments .comment-form p label {
         width: 100px; }
       #comments .comment-form p input, #comments .comment-form p textarea {
@@ -4653,6 +4688,9 @@ body.home div.contact-us {
           height: 200px; }
       body.home div.contact-us .row .column:first-child {
         border-right: 2px solid; }
+        @media (max-width: 768px) {
+          body.home div.contact-us .row .column:first-child {
+            border-right: none; } }
 
 body.page-template-default main.site-main {
   padding-top: 20px;
@@ -4668,6 +4706,49 @@ body.page-template-default main.site-main {
     height: 300px; }
   body.page-template-default main.site-main .entry-content {
     margin-top: 20px; }
+    body.page-template-default main.site-main .entry-content.contact-us .column {
+      margin-bottom: 20px; }
+      body.page-template-default main.site-main .entry-content.contact-us .column:last-child {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; }
+        body.page-template-default main.site-main .entry-content.contact-us .column:last-child ul {
+          list-style: none;
+          padding-left: 0; }
+          body.page-template-default main.site-main .entry-content.contact-us .column:last-child ul li {
+            margin-bottom: 10px; }
+        body.page-template-default main.site-main .entry-content.contact-us .column:last-child .wechat-div {
+          margin-left: 20px; }
+          body.page-template-default main.site-main .entry-content.contact-us .column:last-child .wechat-div img.wechat-qrcode {
+            height: 200px; }
+      body.page-template-default main.site-main .entry-content.contact-us .column:first-child {
+        border-right: 2px solid; }
+        body.page-template-default main.site-main .entry-content.contact-us .column:first-child form.wpcf7-form label {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          body.page-template-default main.site-main .entry-content.contact-us .column:first-child form.wpcf7-form label > span:first-child {
+            width: 130px; }
+          body.page-template-default main.site-main .entry-content.contact-us .column:first-child form.wpcf7-form label > span:last-child input, body.page-template-default main.site-main .entry-content.contact-us .column:first-child form.wpcf7-form label > span:last-child textarea {
+            width: 300px; }
+          body.page-template-default main.site-main .entry-content.contact-us .column:first-child form.wpcf7-form label > span:last-child textarea {
+            height: 150px; }
+        body.page-template-default main.site-main .entry-content.contact-us .column:first-child form.wpcf7-form input[type='submit'] {
+          width: auto;
+          padding: 2px 10px;
+          background: #00585E;
+          color: #F5F2DC;
+          cursor: pointer;
+          box-shadow: none;
+          border: none; }
+          @media (max-width: 992px) {
+            body.page-template-default main.site-main .entry-content.contact-us .column:first-child form.wpcf7-form input[type='submit'] {
+              width: 100%; } }
+        @media (max-width: 992px) {
+          body.page-template-default main.site-main .entry-content.contact-us .column:first-child {
+            border-right: none; } }
 
 body.archive main.site-main {
   padding-top: 20px;
@@ -4728,7 +4809,8 @@ body.archive main.site-main {
         body.archive main.site-main ul.news-content li time {
           display: none; } }
   body.archive main.site-main div.techs-content .column {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 10px; }
     body.archive main.site-main div.techs-content .column .tech-content {
       box-shadow: 5px 5px 10px #adb5bd;
       padding: 10px;

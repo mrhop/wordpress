@@ -77,7 +77,14 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
+ini_set( 'display_errors', 'Off' );
+ini_set( 'error_reporting', E_ALL );
 define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+
+/* add smtp server*/
+define( 'WPMS_ON', true );
+define( 'WPMS_SMTP_PASS', 'sleep123' );
 
 /* That's all, stop editing! Happy blogging. */
 

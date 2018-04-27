@@ -16,9 +16,12 @@ const commons = {
             if (document.documentElement.scrollTop >= 40) {
                 document.querySelector('#masthead').classList.add('scroll-down')
                 document.querySelector('#content').classList.add('scroll-down')
+                document.querySelector('#colophon .search-form').classList.add('scroll-down')
+
             } else {
                 document.querySelector('#masthead').classList.remove('scroll-down')
                 document.querySelector('#content').classList.remove('scroll-down')
+                document.querySelector('#colophon .search-form').classList.remove('scroll-down')
             }
         })
     },
@@ -30,10 +33,20 @@ const commons = {
             },
             loop: true
         });
+    },
+    searchSubmit: () => {
+        document.querySelector('#colophon form.search-form').addEventListener('submit', (e) => {
+            let searchField = document.querySelector('#colophon form.search-form .search-field')
+            if (!searchField.value.trim()) {
+                searchField.value = ''
+                e.preventDefault()
+            }
+        })
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
     commons.navbarToggle()
     commons.windowScroll()
     commons.slider()
+    commons.searchSubmit()
 })
