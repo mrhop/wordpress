@@ -64,5 +64,6 @@ class-wp-query.php [分析sql语句]
 1.contact us done
 2. search widget
 3. tags的部分
+4. 404.php 需要给出一个image 在content中
 
 

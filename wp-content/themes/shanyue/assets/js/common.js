@@ -209,9 +209,9 @@ document.addEventListener('DOMContentLoaded', function () {
   !*** ./assets/scss/common.scss ***!
   \*********************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// extracted by mini-css-extract-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n              background: darken($focusColor 20%);\r\n                         ^\r\n      Function darken is missing argument $amount.\r\n      in C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\assets\\scss\\common.scss (line 776, column 27)\n    at runLoaders (C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\node_modules\\webpack\\lib\\NormalModule.js:242:20)\n    at C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.done [as callback] (C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\node_modules\\neo-async\\async.js:7974:18)\n    at options.error (C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\shanyue\\cabin\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ })
 
