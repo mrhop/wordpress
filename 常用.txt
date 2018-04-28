@@ -60,10 +60,12 @@ bug: [不能添加日期限制]
 
 class-wp-query.php [分析sql语句]
 
+
+https://www.maketecheasier.com/apache-server-ssl-support/ apache ssl
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-14-04 nginx ssl
+
 继续处理
-1.contact us done
-2. search widget
-3. tags的部分
-4. 404.php 需要给出一个image 在content中
+转移到 正式页面中，然后开始文稿的设定
+然后是shopping的处理
 
 
