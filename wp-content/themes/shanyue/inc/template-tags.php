@@ -96,14 +96,13 @@ if ( ! function_exists( 'shanyue_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'shanyue' ),
+					__( 'Edit it', 'shanyue' ),
 					array(
 						'span' => array(
 							'class' => array(),
 						),
 					)
-				),
-				get_the_title()
+				)
 			),
 			'<span class="edit-link">',
 			'</span>'
@@ -142,14 +141,13 @@ if ( ! function_exists( 'shanyue_product_footer' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'shanyue' ),
+					__( 'Edit it', 'shanyue' ),
 					array(
 						'span' => array(
 							'class' => array(),
 						),
 					)
-				),
-				get_the_title()
+				)
 			),
 			'<span class="edit-link">',
 			'</span>'
@@ -186,14 +184,13 @@ if ( ! function_exists( 'shanyue_techs_footer' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'shanyue' ),
+					__( 'Edit it', 'shanyue' ),
 					array(
 						'span' => array(
 							'class' => array(),
 						),
 					)
-				),
-				get_the_title()
+				)
 			),
 			'<span class="edit-link">',
 			'</span>'
@@ -255,18 +252,41 @@ if ( ! function_exists( 'shanyue_search_footer' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'shanyue' ),
+					__( 'Edit it', 'shanyue' ),
 					array(
 						'span' => array(
 							'class' => array(),
 						),
 					)
-				),
-				get_the_title()
+				)
 			),
 			'<span class="edit-link">',
 			'</span>'
 		);
 	}
 endif;
+
+if ( ! function_exists( 'shanyue_tags_footer' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function shanyue_tags_footer() {
+		edit_post_link(
+			sprintf(
+				wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Edit it', 'shanyue' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				)
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+endif;
+
 

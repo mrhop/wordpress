@@ -4866,41 +4866,69 @@ body.single main.site-main {
       border-right: 1px solid #adb5bd;
       height: 150px; }
 
-body.search main.site-main {
+body.search main.site-main, body.tag main.site-main {
   padding-top: 20px;
   padding-bottom: 40px; }
-  body.search main.site-main .page-title {
+  body.search main.site-main .page-title, body.tag main.site-main .page-title {
     box-shadow: 0px 3px 10px #6c757d;
     padding: 3px 10px;
     color: #F5F2DC;
     background: #454445;
     margin-bottom: 20px; }
-  body.search main.site-main .page-content {
-    margin-top: 20px; }
-    body.search main.site-main .page-content article {
-      display: flex;
+  body.search main.site-main .page-content, body.tag main.site-main .page-content {
+    margin-top: 20px;
+    font-size: .9rem; }
+    body.search main.site-main .page-content article, body.tag main.site-main .page-content article {
+      display: block;
       padding: 5px 0;
       padding: 5px 5px;
       box-shadow: 0 1px 5px #adb5bd;
       margin: 7px 0; }
-      body.search main.site-main .page-content article:hover {
+      body.search main.site-main .page-content article:hover, body.tag main.site-main .page-content article:hover {
         background: #dee2e6; }
-      body.search main.site-main .page-content article i {
-        color: #FF5729;
-        font-size: 1rem;
-        margin-right: 3px; }
-      body.search main.site-main .page-content article a.title-link {
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 760px; }
-        @media (max-width: 992px) {
-          body.search main.site-main .page-content article a.title-link {
-            max-width: 500px; } }
-        @media (max-width: 768px) {
-          body.search main.site-main .page-content article a.title-link {
-            max-width: 350px; } }
+      body.search main.site-main .page-content article .entry-header, body.tag main.site-main .page-content article .entry-header {
+        display: inline-flex;
+        justify-items: center;
+        align-items: center; }
+        body.search main.site-main .page-content article .entry-header a.title-link, body.tag main.site-main .page-content article .entry-header a.title-link {
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 760px; }
+          @media (max-width: 992px) {
+            body.search main.site-main .page-content article .entry-header a.title-link, body.tag main.site-main .page-content article .entry-header a.title-link {
+              max-width: 500px; } }
+          @media (max-width: 768px) {
+            body.search main.site-main .page-content article .entry-header a.title-link, body.tag main.site-main .page-content article .entry-header a.title-link {
+              max-width: 350px; } }
+        body.search main.site-main .page-content article .entry-header .cat-links a, body.tag main.site-main .page-content article .entry-header .cat-links a {
+          font-size: .8rem;
+          display: inline-block;
+          margin-right: 3px;
+          padding: 1px 5px;
+          background: #FF5729;
+          color: #F5F2DC; }
+          body.search main.site-main .page-content article .entry-header .cat-links a:hover, body.tag main.site-main .page-content article .entry-header .cat-links a:hover {
+            background: #c22a00; }
+      body.search main.site-main .page-content article .entry-footer, body.tag main.site-main .page-content article .entry-footer {
+        font-size: .7rem;
+        margin-top: 5px; }
+        body.search main.site-main .page-content article .entry-footer .tags-links a, body.tag main.site-main .page-content article .entry-footer .tags-links a {
+          display: inline-block;
+          margin-right: 3px;
+          padding: 1px 5px;
+          background: #FF5729;
+          color: #F5F2DC; }
+          body.search main.site-main .page-content article .entry-footer .tags-links a:hover, body.tag main.site-main .page-content article .entry-footer .tags-links a:hover {
+            background: #c22a00; }
+
+body.error404 .site-main section.error-404 {
+  padding: 40px 10px;
+  text-align: center; }
+  @media (max-width: 768px) {
+    body.error404 .site-main section.error-404 img {
+      width: 100%; } }
 
 
 /*# sourceMappingURL=common.css.map*/

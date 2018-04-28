@@ -725,7 +725,7 @@ body.single {
 
 }
 
-body.search {
+body.search, body.tag {
   main.site-main {
     padding-top: 20px;
     padding-bottom: 40px;
@@ -738,8 +738,9 @@ body.search {
     }
     .page-content {
       margin-top: 20px;
+      font-size: .9rem;
       article {
-        display: flex;
+        display: block;
         padding: 5px 0;
         padding: 5px 5px;
         box-shadow: 0 1px 5px $gray-500;
@@ -747,35 +748,66 @@ body.search {
         &:hover {
           background: $gray-300;
         }
-        i {
-          color: $focusColor;
-          font-size: 1rem;
-          margin-right: 3px;
-        }
-        a.title-link {
-          display: inline-block;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          max-width: 760px;
-          @media (max-width: map_get($grid-breakpoints, "lg")) {
-            max-width: 500px;
-          }
-          @media (max-width: map_get($grid-breakpoints, "md")) {
-            max-width: 350px;
-          }
-        }
-        .cat-link {
-          a {
+        .entry-header {
+          display: inline-flex;
+          justify-items: center;
+          align-items: center;
+          a.title-link {
             display: inline-block;
-            margin-right: 3px;
-            padding: 2px;
-            background: $focusColor;
-            color: $lightColor;
-            &:hover {
-              background: darken($focusColor 20%);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 760px;
+            @media (max-width: map_get($grid-breakpoints, "lg")) {
+              max-width: 500px;
+            }
+            @media (max-width: map_get($grid-breakpoints, "md")) {
+              max-width: 350px;
             }
           }
+          .cat-links {
+            a {
+              font-size: .8rem;
+              display: inline-block;
+              margin-right: 3px;
+              padding: 1px 5px;
+              background: $focusColor;
+              color: $lightColor;
+              &:hover {
+                background: darken($focusColor, 20%);
+              }
+            }
+          }
+        }
+        .entry-footer {
+          font-size: .7rem;
+          margin-top: 5px;
+          .tags-links {
+            a {
+              display: inline-block;
+              margin-right: 3px;
+              padding: 1px 5px;
+              background: $focusColor;
+              color: $lightColor;
+              &:hover {
+                background: darken($focusColor, 20%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.error404 {
+  .site-main {
+    section.error-404 {
+      padding: 40px 10px;
+      text-align: center;
+      img {
+        @media (max-width: map_get($grid-breakpoints, "md")) {
+          width: 100%;
         }
       }
     }

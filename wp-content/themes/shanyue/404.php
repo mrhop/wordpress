@@ -11,17 +11,8 @@ get_header();
 ?>
     <main id="main" class="site-main container">
         <section class="error-404 not-found">
-            <header class="page-header">
-                <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'shanyue' ); ?></h1>
-            </header><!-- .page-header -->
-
-            <div class="page-content">
-
-
-            </div><!-- .page-content -->
+            <img src="<?php echo wp_upload_dir()['baseurl'] . '/2018/04/404.jpg' ?>" title="404 error,page not found"/>
         </section><!-- .error-404 -->
-
     </main><!-- #main -->
-
 <?php
 get_footer();
