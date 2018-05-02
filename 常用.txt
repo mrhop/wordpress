@@ -68,4 +68,26 @@ https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-1
 转移到 正式页面中，然后开始文稿的设定
 然后是shopping的处理
 
+// config中需要添加的
+ini_set( 'display_errors', 'Off' );
+ini_set( 'error_reporting', E_ALL );
+define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_DISPLAY', false );
 
+/* add smtp server*/
+define( 'WPMS_ON', true );
+define( 'WPMS_SMTP_PASS', 'sleep123' );
+
+
+
+// 没有权限创建文件夹的情况
+# ps aux | egrep '(apache|httpd)'
+$ sudo find /var/www/html/ -type d -exec chmod 755 {} +
+$ sudo find /var/www/html/ -type f -exec chmod 644 {} +
+
+
+// 上传文件大小处理
+nginx
+ client_max_body_size 32m;
+apache
+http://www.wpyou.com/wordpress-modify-post-max-size.html

@@ -60,7 +60,7 @@ header#masthead {
       }
     }
     .contact {
-      z-index: 2;
+      z-index: 20;
       text-align: right;
       > div {
         display: inline-block;
@@ -114,6 +114,8 @@ header#masthead {
         }
       }
       .site-description {
+        margin-bottom: .5rem;
+        font-weight: bold;
         @media (max-width: map_get($grid-breakpoints, "lg")) {
           display: none;
         }
@@ -414,6 +416,14 @@ header#masthead {
       #comment {
         height: 80px;
       }
+      &.comment-subscription-form {
+        display: flex;
+        align-items: center;
+        label {
+          margin-bottom: 0;
+          width: auto;
+        }
+      }
     }
 
   }
@@ -532,6 +542,10 @@ body.page-template-default {
                 > span {
                   &:first-child {
                     width: 130px;
+                    b.required {
+                      color: $danger;
+                      font-weight: normal;
+                    }
                   }
                   &:last-child {
                     input, textarea {
@@ -611,6 +625,7 @@ body.archive {
       list-style: none;
       li {
         display: flex;
+        align-items: center;
         padding: 5px 0;
         padding: 5px 5px;
         box-shadow: 0 1px 5px $gray-500;

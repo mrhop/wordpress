@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) {
-			$categories_list = get_the_category_list( esc_html__( ', ', 'shanyue' ) );
+			$categories_list = get_the_category_list( esc_html__( ' ', 'shanyue' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.

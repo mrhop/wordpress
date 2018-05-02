@@ -27,7 +27,7 @@
     </a>
     <footer class="tech-footer">
 		<?php
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'shanyue' ) );
+		$tags_list = get_the_tag_list( '', esc_html_x( '  ', 'list item separator', 'shanyue' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'shanyue' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
