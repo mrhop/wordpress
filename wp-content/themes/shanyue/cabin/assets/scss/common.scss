@@ -27,6 +27,12 @@ $body-color: $thickColor !default;
 
 @import "~swiper/dist/css/swiper.css";
 
+#infinite-footer {
+  @media (max-width: 640px) {
+    position: fixed !important;
+  }
+}
+
 a:hover, a:active, a:focus {
   outline: 0;
 }
@@ -480,6 +486,9 @@ body.home {
           margin-left: 20px;
           img.wechat-qrcode {
             height: 200px;
+            @media (max-width: map_get($grid-breakpoints, "sm")) {
+              height: 100px;
+            }
           }
         }
         &:first-child {
@@ -530,6 +539,9 @@ body.page-template-default {
               margin-left: 20px;
               img.wechat-qrcode {
                 height: 200px;
+                @media (max-width: map_get($grid-breakpoints, "sm")) {
+                  height: 100px;
+                }
               }
             }
           }
