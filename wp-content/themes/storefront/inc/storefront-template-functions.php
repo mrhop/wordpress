@@ -153,6 +153,75 @@ if ( ! function_exists( 'storefront_header_widget_region' ) ) {
 	}
 }
 
+if ( ! function_exists( 'storefront_header_top' ) ) {
+	/**
+	 * Site branding wrapper and display
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function storefront_header_top() {
+		?>
+        <div class="top-info row">
+            <div class="col col-sm-6 col-8 welcome"><?php echo get_theme_mod( 'storefront_header_welcome' ); ?></div>
+            <div class="col col-sm-6 col-4 contact">
+                <div class="email">
+					<?php
+					$storefront_header_email_value = get_theme_mod( 'storefront_header_email_value' );
+					if ( $storefront_header_email_value != '' ) {
+						?>
+                        <a href="mailto:<?php echo $storefront_header_email_value ?>">
+                            <i class="fa fa-envelope"></i>
+                            <span><?php echo $storefront_header_email_value ?></span></a>
+					<?php } ?>
+                </div>
+                <div class="phone">
+					<?php
+					$storefront_header_phone_value = get_theme_mod( 'storefront_header_phone_value' );
+					if ( $storefront_header_phone_value != '' ) { ?>
+                        <a href="tel:<?php echo $storefront_header_phone_value ?>"><i
+                                    class="fa fa-phone"></i><span><?php echo $storefront_header_phone_value ?></span></a>
+					<?php } ?>
+                </div>
+                <div class="wechat">
+					<?php
+					$storefront_header_wechat_value = get_theme_mod( 'storefront_header_wechat_value' );
+					if ( $storefront_header_wechat_value != '' ) {
+						?>
+                        <a>
+                            <i class="fa fa-wechat"></i>
+                            <span><?php echo __( 'QRcode', 'storefront' ) ?></span>
+                            <img src="<?php echo $storefront_header_wechat_value ?>"/>
+                        </a>
+					<?php } ?>
+                </div>
+                <div class="facebook">
+					<?php
+					$storefront_header_facebook_value = get_theme_mod( 'storefront_header_facebook_value' );
+					if ( $storefront_header_facebook_value != '' ) {
+						?>
+                        <a href="<?php echo $storefront_header_facebook_value ?>" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                            <span><?php echo __( 'Access Facebook', 'storefront' ) ?></span></a>
+					<?php } ?>
+                </div>
+
+                <div class="etsy">
+		            <?php
+		            $storefront_header_etsy_value = get_theme_mod( 'storefront_header_etsy_value' );
+		            if ( $storefront_header_etsy_value != '' ) {
+			            ?>
+                        <a href="<?php echo $storefront_header_etsy_value ?>" target="_blank">
+                            <i class="fa fa-etsy"></i>
+                            <span><?php echo __( 'Etsy Shop', 'storefront' ) ?></span></a>
+		            <?php } ?>
+                </div>
+            </div>
+        </div>
+		<?php
+	}
+}
+
 if ( ! function_exists( 'storefront_site_branding' ) ) {
 	/**
 	 * Site branding wrapper and display

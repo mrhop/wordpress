@@ -24,14 +24,14 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 * @since 1.0
 		 */
 		public function __construct() {
-			add_action( 'after_setup_theme',          array( $this, 'setup' ) );
-			add_action( 'widgets_init',               array( $this, 'widgets_init' ) );
-			add_action( 'wp_enqueue_scripts',         array( $this, 'scripts' ),       10 );
-			add_action( 'wp_enqueue_scripts',         array( $this, 'child_scripts' ), 30 ); // After WooCommerce.
-			add_filter( 'body_class',                 array( $this, 'body_classes' ) );
-			add_filter( 'wp_page_menu_args',          array( $this, 'page_menu_args' ) );
+			add_action( 'after_setup_theme', array( $this, 'setup' ) );
+			add_action( 'widgets_init', array( $this, 'widgets_init' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 10 );
+			add_action( 'wp_enqueue_scripts', array( $this, 'child_scripts' ), 30 ); // After WooCommerce.
+			add_filter( 'body_class', array( $this, 'body_classes' ) );
+			add_filter( 'wp_page_menu_args', array( $this, 'page_menu_args' ) );
 			add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ) );
-			add_action( 'enqueue_embed_scripts',      array( $this, 'print_embed_styles' ) );
+			add_action( 'enqueue_embed_scripts', array( $this, 'print_embed_styles' ) );
 		}
 
 		/**
@@ -73,9 +73,9 @@ if ( ! class_exists( 'Storefront' ) ) :
 			 * Enable support for site logo
 			 */
 			add_theme_support( 'custom-logo', apply_filters( 'storefront_custom_logo_args', array(
-				'height'      => 110,
-				'width'       => 470,
-				'flex-width'  => true,
+				'height'     => 110,
+				'width'      => 470,
+				'flex-width' => true,
 			) ) );
 
 			// This theme uses wp_nav_menu() in two locations.
@@ -144,9 +144,9 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 */
 		public function widgets_init() {
 			$sidebar_args['sidebar'] = array(
-				'name'          => __( 'Sidebar', 'storefront' ),
-				'id'            => 'sidebar-1',
-				'description'   => ''
+				'name'        => __( 'Sidebar', 'storefront' ),
+				'id'          => 'sidebar-1',
+				'description' => ''
 			);
 
 			$sidebar_args['header'] = array(
@@ -158,16 +158,16 @@ if ( ! class_exists( 'Storefront' ) ) :
 			$rows    = intval( apply_filters( 'storefront_footer_widget_rows', 1 ) );
 			$regions = intval( apply_filters( 'storefront_footer_widget_columns', 4 ) );
 
-			for ( $row = 1; $row <= $rows; $row++ ) {
-				for ( $region = 1; $region <= $regions; $region++ ) {
+			for ( $row = 1; $row <= $rows; $row ++ ) {
+				for ( $region = 1; $region <= $regions; $region ++ ) {
 					$footer_n = $region + $regions * ( $row - 1 ); // Defines footer sidebar ID.
 					$footer   = sprintf( 'footer_%d', $footer_n );
 
 					if ( 1 == $rows ) {
-						$footer_region_name = sprintf( __( 'Footer Column %1$d', 'storefront' ), $region );
+						$footer_region_name        = sprintf( __( 'Footer Column %1$d', 'storefront' ), $region );
 						$footer_region_description = sprintf( __( 'Widgets added here will appear in column %1$d of the footer.', 'storefront' ), $region );
 					} else {
-						$footer_region_name = sprintf( __( 'Footer Row %1$d - Column %2$d', 'storefront' ), $row, $region );
+						$footer_region_name        = sprintf( __( 'Footer Row %1$d - Column %2$d', 'storefront' ), $row, $region );
 						$footer_region_description = sprintf( __( 'Widgets added here will appear in column %1$d of footer row %2$d.', 'storefront' ), $region, $row );
 					}
 
@@ -242,10 +242,15 @@ if ( ! class_exists( 'Storefront' ) ) :
 
 			wp_enqueue_style( 'storefront-fonts', $fonts_url, array(), null );
 
+			wp_enqueue_style( 'storefront-cabin-common', get_template_directory_uri() . '/assets/css/common.css', '', $storefront_version );
+
 			/**
 			 * Scripts
 			 */
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+			wp_enqueue_script( 'storefront-cabin-initial', get_template_directory_uri() . '/assets/js/initial.js', array(), $storefront_version, true );
+
 
 			wp_enqueue_script( 'storefront-navigation', get_template_directory_uri() . '/assets/js/navigation' . $suffix . '.js', array(), $storefront_version, true );
 			wp_enqueue_script( 'storefront-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $suffix . '.js', array(), '20130115', true );
@@ -258,6 +263,9 @@ if ( ! class_exists( 'Storefront' ) ) :
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
+			wp_enqueue_script( 'storefront-cabin-common', get_template_directory_uri() . '/assets/js/common.js', array(), $storefront_version, true );
+			wp_enqueue_script( 'storefront-cabin-vendors', get_template_directory_uri() . '/assets/js/vendors.js', array(), $storefront_version, true );
+
 		}
 
 		/**
@@ -278,10 +286,12 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
 		 *
 		 * @param array $args Configuration arguments.
+		 *
 		 * @return array
 		 */
 		public function page_menu_args( $args ) {
 			$args['show_home'] = true;
+
 			return $args;
 		}
 
@@ -289,6 +299,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 * Adds custom classes to the array of body classes.
 		 *
 		 * @param array $classes Classes for the body element.
+		 *
 		 * @return array
 		 */
 		public function body_classes( $classes ) {
@@ -298,7 +309,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			}
 
 			if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
-				$classes[]	= 'no-wc-breadcrumb';
+				$classes[] = 'no-wc-breadcrumb';
 			}
 
 			/**
@@ -329,7 +340,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 * Custom navigation markup template hooked into `navigation_markup_template` filter hook.
 		 */
 		public function navigation_markup_template() {
-			$template  = '<nav id="post-navigation" class="navigation %1$s" role="navigation" aria-label="' . esc_html__( 'Post Navigation', 'storefront' ) . '">';
+			$template = '<nav id="post-navigation" class="navigation %1$s" role="navigation" aria-label="' . esc_html__( 'Post Navigation', 'storefront' ) . '">';
 			$template .= '<span class="screen-reader-text">%2$s</span>';
 			$template .= '<div class="nav-links">%3$s</div>';
 			$template .= '</nav>';
@@ -345,41 +356,40 @@ if ( ! class_exists( 'Storefront' ) ) :
 			$accent_color     = get_theme_mod( 'storefront_accent_color' );
 			$background_color = storefront_get_content_background_color();
 			?>
-			<style type="text/css">
-				.wp-embed {
-					padding: 2.618em !important;
-					border: 0 !important;
-					border-radius: 3px !important;
-					font-family: "Source Sans Pro", "Open Sans", sans-serif !important;
-					background-color: <?php echo esc_html( storefront_adjust_color_brightness( $background_color, -7 ) ); ?> !important;
-				}
+            <style type="text/css">
+                .wp-embed {
+                    padding: 2.618em !important;
+                    border: 0 !important;
+                    border-radius: 3px !important;
+                    font-family: "Source Sans Pro", "Open Sans", sans-serif !important;
+                    background-color: <?php echo esc_html( storefront_adjust_color_brightness( $background_color, -7 ) ); ?> !important;
+                }
 
-				.wp-embed .wp-embed-featured-image {
-					margin-bottom: 2.618em;
-				}
+                .wp-embed .wp-embed-featured-image {
+                    margin-bottom: 2.618em;
+                }
 
-				.wp-embed .wp-embed-featured-image img,
-				.wp-embed .wp-embed-featured-image.square {
-					min-width: 100%;
-					margin-bottom: .618em;
-				}
+                .wp-embed .wp-embed-featured-image img,
+                .wp-embed .wp-embed-featured-image.square {
+                    min-width: 100%;
+                    margin-bottom: .618em;
+                }
 
-				a.wc-embed-button {
-					padding: .857em 1.387em !important;
-					font-weight: 600;
-					background-color: <?php echo esc_attr( $accent_color ); ?>;
-					color: #fff !important;
-					border: 0 !important;
-					line-height: 1;
-					border-radius: 0 !important;
-					box-shadow:
-						inset 0 -1px 0 rgba(#000,.3);
-				}
+                a.wc-embed-button {
+                    padding: .857em 1.387em !important;
+                    font-weight: 600;
+                    background-color: <?php echo esc_attr( $accent_color ); ?>;
+                    color: #fff !important;
+                    border: 0 !important;
+                    line-height: 1;
+                    border-radius: 0 !important;
+                    box-shadow: inset 0 -1px 0 rgba(#000, .3);
+                }
 
-				a.wc-embed-button + a.wc-embed-button {
-					background-color: #60646c;
-				}
-			</style>
+                a.wc-embed-button + a.wc-embed-button {
+                    background-color: #60646c;
+                }
+            </style>
 			<?php
 		}
 	}

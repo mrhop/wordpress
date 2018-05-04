@@ -132,6 +132,8 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function customize_register( $wp_customize ) {
 
+		    // add cabin flag
+			require dirname( __FILE__ ) . '/class-storefront-cabin-customizer-basic-info.php';
 			// Move background color setting alongside background image.
 			$wp_customize->get_control( 'background_color' )->section   = 'background_image';
 			$wp_customize->get_control( 'background_color' )->priority  = 20;
