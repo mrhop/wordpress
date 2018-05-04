@@ -13,14 +13,6 @@ https://codex.wordpress.org/Function_Reference
 http://codex.wordpress.org/Template_Tags
 
 
-深入是一个逐步的过程
-admin_enqueue_scripts-- 添加admin js和style
-
-STATISTICS COUNTERS
-411页
-
-
-
 http://www.shejidaren.com/%E5%9C%A8%E7%BA%BF%E9%85%8D%E8%89%B2%E5%B7%A5%E5%85%B7.html
 
 https://color.adobe.com/explore/?filter=most-popular&time=month
@@ -30,14 +22,6 @@ https://www.imsxm.com/jetbrains-license-server.html
 https://wordpress.org/themes/erzen/
 
 http://demo.wpshopmart.com/erzen-lite/
-
-
-
-1.多开微信
-2.多开facebook
-
-采用page_section的方式，同时提供不同的类型，比如slider，再比如features，同时做级联和自定制（publish能否给取消掉，只作为审核状态出现）
-
 
 1.type select（slider，features）
 2.pageDropdown  https://codex.wordpress.org/Function_Reference/wp_dropdown_pages
@@ -64,9 +48,6 @@ class-wp-query.php [分析sql语句]
 https://www.maketecheasier.com/apache-server-ssl-support/ apache ssl
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-14-04 nginx ssl
 
-继续处理
-转移到 正式页面中，然后开始文稿的设定
-然后是shopping的处理
 
 // config中需要添加的
 ini_set( 'display_errors', 'Off' );
@@ -77,6 +58,8 @@ define( 'WP_DEBUG_DISPLAY', false );
 /* add smtp server*/
 define( 'WPMS_ON', true );
 define( 'WPMS_SMTP_PASS', 'sleep123' );
+
+
 
 
 
@@ -91,3 +74,5 @@ nginx
  client_max_body_size 32m;
 apache
 http://www.wpyou.com/wordpress-modify-post-max-size.html
+
+// mysql 数据库 备份和还原

@@ -11,7 +11,8 @@ get_header();
 ?>
     <main id="main" class="site-main container">
         <section class="error-404 not-found">
-            <img src="<?php echo wp_upload_dir()['baseurl'] . '/2018/04/404.jpg' ?>" title="404 error,page not found"/>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/404.jpg' ?>"
+                 title="404 error,page not found"/>
         </section><!-- .error-404 -->
     </main><!-- #main -->
 <?php
