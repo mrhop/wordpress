@@ -20,13 +20,14 @@ module.exports = function( grunt ) {
 			dist: {
 				src: [
 					'style.css',
-					'assets/sass/admin/*.css',
-					'assets/sass/admin/welcome-screen/welcome.css',
-					'assets/sass/admin/customizer/customizer.css',
-					'assets/sass/woocommerce/extensions/*.css',
-					'assets/sass/woocommerce/woocommerce.css',
-					'assets/sass/jetpack/jetpack.css',
-					'assets/sass/base/*.css'
+					'assets/css/admin/*.css',
+					'assets/css/admin/welcome-screen/welcome.css',
+					'assets/css/admin/customizer/customizer.css',
+					'assets/css/woocommerce/extensions/*.css',
+					'assets/css/woocommerce/woocommerce.css',
+					'assets/css/woocommerce/woocommerce-legacy.css',
+					'assets/css/jetpack/jetpack.css',
+					'assets/css/base/*.css'
 				]
 			}
 		},
@@ -43,7 +44,20 @@ module.exports = function( grunt ) {
 				'assets/js/admin/*.js',
 				'!assets/js/admin/*.min.js',
 				'assets/js/woocommerce/*.js',
-				'!assets/js/woocommerce/*.min.js'
+				'!assets/js/woocommerce/*.min.js',
+				'assets/js/woocommerce/extensions/*.js',
+				'!assets/js/woocommerce/extensions/*.min.js'
+			]
+		},
+
+		// Sass linting with Stylelint.
+		stylelint: {
+			options: {
+				configFile: '.stylelintrc'
+			},
+			all: [
+				'assets/css/**/*.scss',
+				'!assets/css/sass/vendors/**/*.scss'
 			]
 		},
 
@@ -88,6 +102,18 @@ module.exports = function( grunt ) {
 					ext: '.min.js'
 				}]
 			},
+			extensions: {
+				files: [{
+					expand: true,
+					cwd: 'assets/js/woocommerce/extensions/',
+					src: [
+						'*.js',
+						'!*.min.js'
+					],
+					dest: 'assets/js/woocommerce/extensions/',
+					ext: '.min.js'
+				}]
+			},
 			admin: {
 				files: [{
 					expand: true,
@@ -112,29 +138,30 @@ module.exports = function( grunt ) {
 				},
 				files: [{
 					'style.css': 'style.scss',
-					'assets/sass/admin/admin.css': 'assets/sass/admin/admin.scss',
-					'assets/sass/admin/plugin-install.css': 'assets/sass/admin/plugin-install.scss',
-					'assets/sass/admin/welcome-screen/welcome.css': 'assets/sass/admin/welcome-screen/welcome.scss',
-					'assets/sass/admin/customizer/customizer.css': 'assets/sass/admin/customizer/customizer.scss',
-					'assets/sass/woocommerce/extensions/bookings.css': 'assets/sass/woocommerce/extensions/bookings.scss',
-					'assets/sass/woocommerce/extensions/brands.css': 'assets/sass/woocommerce/extensions/brands.scss',
-					'assets/sass/woocommerce/extensions/wishlists.css': 'assets/sass/woocommerce/extensions/wishlists.scss',
-					'assets/sass/woocommerce/extensions/ajax-layered-nav.css': 'assets/sass/woocommerce/extensions/ajax-layered-nav.scss',
-					'assets/sass/woocommerce/extensions/variation-swatches.css': 'assets/sass/woocommerce/extensions/variation-swatches.scss',
-					'assets/sass/woocommerce/extensions/composite-products.css': 'assets/sass/woocommerce/extensions/composite-products.scss',
-					'assets/sass/woocommerce/extensions/photography.css': 'assets/sass/woocommerce/extensions/photography.scss',
-					'assets/sass/woocommerce/extensions/product-reviews-pro.css': 'assets/sass/woocommerce/extensions/product-reviews-pro.scss',
-					'assets/sass/woocommerce/extensions/smart-coupons.css': 'assets/sass/woocommerce/extensions/smart-coupons.scss',
-					'assets/sass/woocommerce/extensions/deposits.css': 'assets/sass/woocommerce/extensions/deposits.scss',
-					'assets/sass/woocommerce/extensions/bundles.css': 'assets/sass/woocommerce/extensions/bundles.scss',
-					'assets/sass/woocommerce/extensions/ship-multiple-addresses.css': 'assets/sass/woocommerce/extensions/ship-multiple-addresses.scss',
-					'assets/sass/woocommerce/extensions/advanced-product-labels.css': 'assets/sass/woocommerce/extensions/advanced-product-labels.scss',
-					'assets/sass/woocommerce/extensions/mix-and-match.css': 'assets/sass/woocommerce/extensions/mix-and-match.scss',
-					'assets/sass/woocommerce/extensions/memberships.css': 'assets/sass/woocommerce/extensions/memberships.scss',
-					'assets/sass/woocommerce/extensions/quick-view.css': 'assets/sass/woocommerce/extensions/quick-view.scss',
-					'assets/sass/woocommerce/woocommerce.css': 'assets/sass/woocommerce/woocommerce.scss',
-					'assets/sass/jetpack/jetpack.css': 'assets/sass/jetpack/jetpack.scss',
-					'assets/sass/base/icons.css': 'assets/sass/base/icons.scss'
+					'assets/css/admin/admin.css': 'assets/css/admin/admin.scss',
+					'assets/css/admin/plugin-install.css': 'assets/css/admin/plugin-install.scss',
+					'assets/css/admin/welcome-screen/welcome.css': 'assets/css/admin/welcome-screen/welcome.scss',
+					'assets/css/admin/customizer/customizer.css': 'assets/css/admin/customizer/customizer.scss',
+					'assets/css/woocommerce/extensions/bookings.css': 'assets/css/woocommerce/extensions/bookings.scss',
+					'assets/css/woocommerce/extensions/brands.css': 'assets/css/woocommerce/extensions/brands.scss',
+					'assets/css/woocommerce/extensions/wishlists.css': 'assets/css/woocommerce/extensions/wishlists.scss',
+					'assets/css/woocommerce/extensions/ajax-layered-nav.css': 'assets/css/woocommerce/extensions/ajax-layered-nav.scss',
+					'assets/css/woocommerce/extensions/variation-swatches.css': 'assets/css/woocommerce/extensions/variation-swatches.scss',
+					'assets/css/woocommerce/extensions/composite-products.css': 'assets/css/woocommerce/extensions/composite-products.scss',
+					'assets/css/woocommerce/extensions/photography.css': 'assets/css/woocommerce/extensions/photography.scss',
+					'assets/css/woocommerce/extensions/product-reviews-pro.css': 'assets/css/woocommerce/extensions/product-reviews-pro.scss',
+					'assets/css/woocommerce/extensions/smart-coupons.css': 'assets/css/woocommerce/extensions/smart-coupons.scss',
+					'assets/css/woocommerce/extensions/deposits.css': 'assets/css/woocommerce/extensions/deposits.scss',
+					'assets/css/woocommerce/extensions/bundles.css': 'assets/css/woocommerce/extensions/bundles.scss',
+					'assets/css/woocommerce/extensions/ship-multiple-addresses.css': 'assets/css/woocommerce/extensions/ship-multiple-addresses.scss',
+					'assets/css/woocommerce/extensions/advanced-product-labels.css': 'assets/css/woocommerce/extensions/advanced-product-labels.scss',
+					'assets/css/woocommerce/extensions/mix-and-match.css': 'assets/css/woocommerce/extensions/mix-and-match.scss',
+					'assets/css/woocommerce/extensions/memberships.css': 'assets/css/woocommerce/extensions/memberships.scss',
+					'assets/css/woocommerce/extensions/quick-view.css': 'assets/css/woocommerce/extensions/quick-view.scss',
+					'assets/css/woocommerce/woocommerce.css': 'assets/css/woocommerce/woocommerce.scss',
+					'assets/css/woocommerce/woocommerce-legacy.css': 'assets/css/woocommerce/woocommerce-legacy.scss',
+					'assets/css/jetpack/jetpack.css': 'assets/css/jetpack/jetpack.scss',
+					'assets/css/base/icons.css': 'assets/css/base/icons.scss'
 				}]
 			}
 		},
@@ -148,37 +175,37 @@ module.exports = function( grunt ) {
 			},
 			admin: {
 				expand: true,
-				cwd: 'assets/sass/admin/',
+				cwd: 'assets/css/admin/',
 				src: ['*.css'],
-				dest: 'assets/sass/admin/',
+				dest: 'assets/css/admin/',
 				ext: '.css'
 			},
 			welcome: {
 				expand: true,
-				cwd: 'assets/sass/admin/welcome-screen/',
+				cwd: 'assets/css/admin/welcome-screen/',
 				src: ['*.css'],
-				dest: 'assets/sass/admin/welcome-screen/',
+				dest: 'assets/css/admin/welcome-screen/',
 				ext: '.css'
 			},
 			customizer: {
 				expand: true,
-				cwd: 'assets/sass/admin/customizer/',
+				cwd: 'assets/css/admin/customizer/',
 				src: ['*.css'],
-				dest: 'assets/sass/admin/customizer/',
+				dest: 'assets/css/admin/customizer/',
 				ext: '.css'
 			},
 			jetpack: {
 				expand: true,
-				cwd: 'assets/sass/jetpack/',
+				cwd: 'assets/css/jetpack/',
 				src: ['*.css'],
-				dest: 'assets/sass/jetpack/',
+				dest: 'assets/css/jetpack/',
 				ext: '.css'
 			},
 			woocommerce: {
 				expand: true,
-				cwd: 'assets/sass/woocommerce/',
+				cwd: 'assets/css/woocommerce/',
 				src: ['*.css'],
-				dest: 'assets/sass/woocommerce/',
+				dest: 'assets/css/woocommerce/',
 				ext: '.css'
 			}
 		},
@@ -188,13 +215,14 @@ module.exports = function( grunt ) {
 			css: {
 				files: [
 					'style.scss',
-					'assets/sass/admin/welcome-screen/*.scss',
-					'assets/sass/woocommerce/*.scss',
-					'assets/sass/jetpack/*.scss',
-					'assets/sass/base/*.scss',
-					'assets/sass/components/*.scss',
-					'assets/sass/utils/*.scss',
-					'assets/sass/vendors/*.scss'
+					'assets/css/admin/welcome-screen/*.scss',
+					'assets/css/woocommerce/*.scss',
+					'assets/css/woocommerce/extensions/*.scss',
+					'assets/css/jetpack/*.scss',
+					'assets/css/base/*.scss',
+					'assets/css/components/*.scss',
+					'assets/css/sass/utils/*.scss',
+					'assets/css/sass/vendors/*.scss'
 				],
 				tasks: [
 					'sass',
@@ -214,6 +242,10 @@ module.exports = function( grunt ) {
 					// WooCommerce js
 					'assets/js/woocommerce/*js',
 					'!assets/js/woocommerce/*.min.js',
+
+					// Extensions js
+					'assets/js/woocommerce/extensions/*js',
+					'!assets/js/woocommerce/extensions/*.min.js',
 
 					// Welcome screen js
 					'assets/js/admin/welcome-screen/*js',
@@ -286,7 +318,11 @@ module.exports = function( grunt ) {
 					'!package.json',
 					'!node_modules/**',
 					'!.DS_Store',
-					'!npm-debug.log'
+					'!npm-debug.log',
+					'!composer.json',
+					'!assets/css/sass/**',
+					'!assets/css/**/*.scss',
+					'!*.scss'
 				],
 				dest: 'storefront',
 				expand: true,
@@ -370,26 +406,27 @@ module.exports = function( grunt ) {
 				ext: '-rtl.css',
 				src: [
 					'style.css',
-					'assets/sass/woocommerce/extensions/bookings.css',
-					'assets/sass/woocommerce/extensions/brands.css',
-					'assets/sass/woocommerce/extensions/wishlists.css',
-					'assets/sass/woocommerce/extensions/ajax-layered-nav.css',
-					'assets/sass/woocommerce/extensions/variation-swatches.css',
-					'assets/sass/woocommerce/extensions/composite-products.css',
-					'assets/sass/woocommerce/extensions/photography.css',
-					'assets/sass/woocommerce/extensions/product-reviews-pro.css',
-					'assets/sass/woocommerce/extensions/smart-coupons.css',
-					'assets/sass/woocommerce/extensions/deposits.css',
-					'assets/sass/woocommerce/extensions/bundles.css',
-					'assets/sass/woocommerce/extensions/ship-multiple-addresses.css',
-					'assets/sass/woocommerce/extensions/advanced-product-labels.css',
-					'assets/sass/woocommerce/extensions/mix-and-match.css',
-					'assets/sass/woocommerce/extensions/memberships.css',
-					'assets/sass/woocommerce/extensions/quick-view.css',
-					'assets/sass/woocommerce/woocommerce.css',
-					'assets/sass/admin/welcome-screen/welcome.css',
-					'assets/sass/jetpack/jetpack.css',
-					'assets/sass/base/icons.css'
+					'assets/css/woocommerce/extensions/bookings.css',
+					'assets/css/woocommerce/extensions/brands.css',
+					'assets/css/woocommerce/extensions/wishlists.css',
+					'assets/css/woocommerce/extensions/ajax-layered-nav.css',
+					'assets/css/woocommerce/extensions/variation-swatches.css',
+					'assets/css/woocommerce/extensions/composite-products.css',
+					'assets/css/woocommerce/extensions/photography.css',
+					'assets/css/woocommerce/extensions/product-reviews-pro.css',
+					'assets/css/woocommerce/extensions/smart-coupons.css',
+					'assets/css/woocommerce/extensions/deposits.css',
+					'assets/css/woocommerce/extensions/bundles.css',
+					'assets/css/woocommerce/extensions/ship-multiple-addresses.css',
+					'assets/css/woocommerce/extensions/advanced-product-labels.css',
+					'assets/css/woocommerce/extensions/mix-and-match.css',
+					'assets/css/woocommerce/extensions/memberships.css',
+					'assets/css/woocommerce/extensions/quick-view.css',
+					'assets/css/woocommerce/woocommerce.css',
+					'assets/css/woocommerce/woocommerce-legacy.css',
+					'assets/css/admin/welcome-screen/welcome.css',
+					'assets/css/jetpack/jetpack.css',
+					'assets/css/base/icons.css'
 				]
 			}
 		},
@@ -418,6 +455,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-rtlcss' );
 	grunt.loadNpmTasks( 'grunt-postcss' );
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
+	grunt.loadNpmTasks( 'grunt-stylelint' );
 
 
 	// Register tasks
@@ -428,6 +466,7 @@ module.exports = function( grunt ) {
 	]);
 
 	grunt.registerTask( 'css', [
+		'stylelint',
 		'sass',
 		'postcss',
 		'cssmin',

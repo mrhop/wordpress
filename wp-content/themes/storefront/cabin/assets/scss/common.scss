@@ -1,4 +1,188 @@
 @import "~compass-mixins/lib/_compass.scss";
 
+$fa-font-path: "../fonts/font-awesome" !default;
+@import "~font-awesome/scss/font-awesome";
+
+$primary: #8E2800 !default;
+$secondary: #FFB03B !default;
+$lightColor: #FFF0A5 !default;
+$thickColor: #000000 !default;
+$focusColor: #B64926 !default;
+$contrastColor: #468966 !default;
+
+$link-color: $focusColor !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 10%) !default;
+$link-hover-decoration: none !default;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/buttons";
+
+a:hover, a:active, a:focus {
+  outline: 0;
+}
+
+a:not([href]):not([tabindex]) {
+  color: $link-color;
+  text-decoration: none;
+
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+@media (min-width: map_get($grid-breakpoints, "md")) {
+  .col-full {
+    width: 66.4989378333rem;
+  }
+}
+
+header#masthead {
+  border-bottom: 1px solid #8E2800;
+  background: #fff;
+  width: 100%;
+  z-index: 10;
+  padding-top: 0;
+  .top-info {
+    padding: 10px 0 10px;
+    font-size: .7rem;
+    .welcome {
+      @media (max-width: map_get($grid-breakpoints, "md")) {
+        display: none;
+      }
+    }
+    .contact {
+      z-index: 20;
+      text-align: right;
+      > div {
+        display: inline-block;
+        margin-left: 10px;
+        a {
+          @media (max-width: map_get($grid-breakpoints, "lg")) {
+            span {
+              display: none;
+            }
+          }
+          cursor: pointer;
+          i {
+            margin-right: 1px;
+          }
+        }
+        &.wechat {
+          a:hover {
+            img {
+              display: block;
+            }
+          }
+          img {
+            display: none;
+            width: 150px;
+            position: absolute;
+            @media (max-width: map_get($grid-breakpoints, "md")) {
+              right: 0;
+            }
+          }
+        }
+      }
+      @media (max-width: map_get($grid-breakpoints, "md")) {
+        max-width: 100%;
+        flex: none;
+      }
+    }
+  }
+  .storefront-site-logo-wrapper {
+    overflow: hidden;
+    display: flex;
+    font-size: .9rem;
+    align-items: center;
+    justify-content: space-between;
+    .site-branding {
+      margin-bottom: 0;
+      width: auto;
+      img.custom-logo {
+        height: 80px;
+        width: auto;
+      }
+    }
+    .storefront-site-search-wrapper {
+      display: flex;
+      align-items: center;
+      .site-user-login {
+        margin-right: 20px;
+      }
+      .site-search {
+        margin-bottom: 0;
+        input.search-field {
+          padding: .5rem 1rem;
+          border: 1px solid $gray-500;
+          width: 200px;
+        }
+      }
+    }
+
+  }
+  .site-branding {
+    margin-bottom: 0;
+    img.custom-logo {
+      height: 80px;
+      width: auto;
+    }
+  }
+  .site-search {
+    margin-bottom: 0;
+    input.search-field {
+      padding: .5rem 1rem;
+      border: 1px solid $gray-500;
+    }
+  }
+  .storefront-primary-navigation {
+    margin-top: 10px;
+    #site-navigation {
+      ul {
+        li {
+          a {
+            padding: .8rem 1.5rem;
+            &:hover {
+              background: #8E2800;
+              color: #fff;
+            }
+          }
+          &.current_page_item {
+            a {
+              background: #8E2800;
+              color: #fff;
+            }
+          }
+        }
+
+      }
+    }
+    #site-header-cart {
+      a.cart-contents {
+        padding: .8rem 0;
+      }
+      &:hover {
+        div.widget_shopping_cart {
+          border-bottom: 1px solid $primary;
+          border-left: 1px solid $primary;
+          border-right: 1px solid $primary;
+        }
+      }
+
+    }
+  }
+
+}
 
 
