@@ -3,6 +3,8 @@
 $fa-font-path: "../fonts/font-awesome" !default;
 @import "~font-awesome/scss/font-awesome";
 
+@import "~swiper/dist/css/swiper.css";
+
 $primary: #8E2800 !default;
 $secondary: #FFB03B !default;
 $lightColor: #FFF0A5 !default;
@@ -21,7 +23,6 @@ $link-hover-decoration: none !default;
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
-@import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/buttons";
 
 a:hover, a:active, a:focus {
@@ -45,6 +46,86 @@ a:not([href]):not([tabindex]) {
 @media (min-width: map_get($grid-breakpoints, "md")) {
   .col-full {
     width: 66.4989378333rem;
+  }
+}
+
+.swiper-container {
+  .swiper-wrapper {
+    .swiper-slide {
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      > img {
+        height: 400px;
+        width: 100%;
+      }
+      .text-wrapper {
+        position: absolute;
+        left: 150px;
+        top: 100px;
+        p {
+          margin-top: 1rem;
+        }
+        a {
+          margin-top: 1rem;
+          padding: 0.5em 1rem;
+          display: inline-block;
+          color: #fff;
+          background: $secondary;
+          &:hover {
+            background: $focusColor;
+          }
+        }
+      }
+      @media (max-width: map_get($grid-breakpoints, "lg")) {
+        height: 350px;
+        > img {
+          width: auto;
+          height: 350px;
+        }
+        .text-wrapper {
+          left: 110px;
+          top: 80px;
+          p {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+          }
+          a {
+            margin-top: 0.5rem;
+          }
+        }
+      }
+
+      @media (max-width: map_get($grid-breakpoints, "md")) {
+        height: 200px;
+        > img {
+          width: auto;
+          height: 200px;
+        }
+        .text-wrapper {
+          left: 80px;
+          top: 30px;
+          p {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+          a {
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .swiper-button {
+    background: none;
+    color: #fff;
+    &:hover {
+      color: $secondary;
+    }
+    &.swiper-button-next {
+      right: 15px;
+    }
   }
 }
 

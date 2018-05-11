@@ -82,7 +82,8 @@ $ps_page_belong  = ( ! empty( $ps_meta['pageBelong'] ) ) ? $ps_meta['pageBelong'
 $ps_file_link_id = ( ! empty( $ps_meta['fileLinkId'] ) ) ? $ps_meta['fileLinkId'] : '';
 $ps_icon_class   = ( ! empty( $ps_meta['iconClass'] ) ) ? $ps_meta['iconClass'] : '';
 $ps_page_related = ( ! empty( $ps_meta['pageRelated'] ) ) ? $ps_meta['pageRelated'] : '';
-$ps_group_slug   = get_post_meta( $post->ID, '_group_slug', true );
+$ps_url_related  = ( ! empty( $ps_meta['urlRelated'] ) ) ? esc_url( $ps_meta['urlRelated'] ) : '';
+$ps_group_slug   = sanitize_text_field( get_post_meta( $post->ID, '_group_slug', true ) );
 // Get the image src
 $your_img_src = wp_get_attachment_image_src( $ps_file_link_id, 'full' );
 // For convenience, see if the array is valid
@@ -136,10 +137,12 @@ echo '<td>' . __( 'File Link', 'shanyue' ) . ':</td><td>'
 </td></tr>
 <tr class="icon-class-tr<?php if ( $ps_type !== 'feature' ) {
 	echo ' hidden';
-} ?>">;
+} ?>">
 	<?php
 	echo '<td>' . __( 'Icon Class', 'shanyue' ) . ':</td><td><input type="text" name="shanyue_page_sections[iconClass]" value="' . esc_attr( $ps_icon_class ) . '" size="50"></td>';
 	echo '</tr><tr>';
+	echo '<td>' . __( 'Url Related', 'shanyue' ) . ':</td><td><input type="text" name="shanyue_page_sections[urlRelated]" value="' . esc_attr( $ps_url_related ) . '" size="50">';
+	echo '</td></tr><tr>';
 	echo '<td>' . __( 'Page Related', 'shanyue' ) . ':</td><td>';
 	wp_dropdown_pages( array(
 		'selected' => $ps_page_related,

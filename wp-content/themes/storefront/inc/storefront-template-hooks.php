@@ -32,7 +32,7 @@ add_action( 'storefront_header', 'storefront_site_user_login', 25 );
 add_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 add_action( 'storefront_header', 'storefront_site_search_wrapper_close', 41 );
 add_action( 'storefront_header', 'storefront_site_logo_wrapper_close', 42 );
-add_action( 'storefront_header', 'storefront_header_container_close', 43);
+add_action( 'storefront_header', 'storefront_header_container_close', 43 );
 add_action( 'storefront_header', 'storefront_primary_navigation_wrapper', 44 );
 add_action( 'storefront_header', 'storefront_primary_navigation', 50 );
 add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close', 68 );
@@ -100,3 +100,6 @@ add_action( 'storefront_page_after', 'storefront_display_comments', 10 );
 
 add_action( 'storefront_homepage', 'storefront_homepage_header', 10 );
 add_action( 'storefront_homepage', 'storefront_page_content', 20 );
+
+// front page
+add_action( 'storefront_before_content', 'storefront_homepage_swiper', 20 );

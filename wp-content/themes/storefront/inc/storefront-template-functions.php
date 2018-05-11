@@ -439,6 +439,65 @@ if ( ! function_exists( 'storefront_skip_links' ) ) {
 	}
 }
 
+if ( ! function_exists( 'storefront_homepage_swiper' ) ) {
+	/**
+	 * Display the page header without the featured image
+	 *
+	 * @since 1.0.0
+	 */
+	function storefront_homepage_swiper() {
+		if ( is_front_page() && ! is_home() ) {
+			global $post;
+			$slider_args  = array(
+				'post_type'  => 'shanyue-p-sections',
+				'meta_key'   => '_group_slug',
+				'meta_value' => 'home-slider',
+				'orderby'    => 'menu-order',
+				'order'      => 'asc'
+			);
+			$slider_query = new   wp_Query( $slider_args );
+			if ( $slider_query->have_posts() ) {
+				?>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+						<?php
+						while ( $slider_query->have_posts() ) {
+							$slider_query->the_post();
+							$ps_meta         = get_post_meta( $post->ID, '_shanyue_page_sections_data', true );
+							$ps_file_link_id = ( ! empty( $ps_meta['fileLinkId'] ) ) ? $ps_meta['fileLinkId'] : '';
+							// Get the image src
+							if ( $ps_file_link_id !== '' ) {
+								$slider_img_src = wp_get_attachment_image_src( $ps_file_link_id, 'full' );
+							}
+							if ( $ps_file_link_id !== '' ) {
+								?>
+                                <div class="swiper-slide">
+                                    <div class="text-wrapper">
+                                        <h1><?php the_title(); ?></h1>
+										<?php the_excerpt(); ?>
+                                        <a href="<?php echo $ps_meta['urlRelated'] == '' ? get_the_permalink( $ps_meta['pageRelated'] ) : esc_url($ps_meta['urlRelated']); ?>"><?php echo __( 'Read More', 'storefront' ) ?></a>
+                                    </div>
+                                    <img src="<?php echo $slider_img_src[0]; ?>" style="width: 100%"/>
+                                </div>
+								<?php
+							}
+							wp_reset_postdata();
+						}
+						?>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="fa fa-3x swiper-button fa-chevron-right swiper-button-next">
+                    </div>
+                    <div class="fa fa-3x swiper-button fa-chevron-left swiper-button-prev">
+                    </div>
+                </div>
+				<?php
+			}
+		}
+	}
+}
+
+
 if ( ! function_exists( 'storefront_homepage_header' ) ) {
 	/**
 	 * Display the page header without the featured image
