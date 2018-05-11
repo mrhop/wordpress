@@ -1,4 +1,12 @@
 1. rtl common
 2. font-awesome 的rtl处理
 
+plugins 有
+akismet
+contact-form-7
+duplicate-post
+jetpack
+shanyue
+woocommerce
+wp-mail-smtp
 目前到首页的swiper部分的处理，然后是整个首页，然后是post，然后....
