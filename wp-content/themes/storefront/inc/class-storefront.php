@@ -242,9 +242,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 
 			wp_enqueue_style( 'storefront-fonts', $fonts_url, array(), null );
 
-			wp_enqueue_style( 'storefron-common-css', get_template_directory_uri() . '/assets/css/common.css' );
-
-
 			/**
 			 * Scripts
 			 */
@@ -282,6 +279,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 * @since  1.5.3
 		 */
 		public function child_scripts() {
+			wp_enqueue_style( 'storefron-common-css', get_template_directory_uri() . '/assets/css/common.css' );
 			if ( is_child_theme() ) {
 				$child_theme = wp_get_theme( get_stylesheet() );
 				wp_enqueue_style( 'storefront-child-style', get_stylesheet_uri(), array(), $child_theme->get( 'Version' ) );

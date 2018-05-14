@@ -103,3 +103,8 @@ add_action( 'storefront_homepage', 'storefront_page_content', 20 );
 
 // front page
 add_action( 'storefront_before_content', 'storefront_homepage_swiper', 20 );
+
+
+// custom filters
+add_filter( 'storefront_credit_link', 'hide_credit_link' );
+//add_filter( 'is_active_sidebar', 'hide_side_bar', 10, 2 );

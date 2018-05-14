@@ -132,6 +132,14 @@ if ( ! function_exists( 'storefront_credit' ) ) {
 		?>
         <div class="site-info">
 			<?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
+			<?php
+			$description = get_bloginfo( 'description' );
+			if ( $description !== '' ) { ?>
+                <br/>
+				<?php
+				echo esc_html( $description );
+			}
+			?>
 			<?php if ( apply_filters( 'storefront_credit_link', true ) ) { ?>
                 <br/> <?php echo '<a href="https://woocommerce.com" target="_blank" title="' . esc_attr__( 'WooCommerce - The Best eCommerce Platform for WordPress', 'storefront' ) . '" rel="author">' . esc_html__( 'Built with Storefront &amp; WooCommerce', 'storefront' ) . '</a>' ?>
 			<?php } ?>
@@ -475,7 +483,7 @@ if ( ! function_exists( 'storefront_homepage_swiper' ) ) {
                                     <div class="text-wrapper">
                                         <h1><?php the_title(); ?></h1>
 										<?php the_excerpt(); ?>
-                                        <a href="<?php echo $ps_meta['urlRelated'] == '' ? get_the_permalink( $ps_meta['pageRelated'] ) : esc_url($ps_meta['urlRelated']); ?>"><?php echo __( 'Read More', 'storefront' ) ?></a>
+                                        <a href="<?php echo $ps_meta['urlRelated'] == '' ? get_the_permalink( $ps_meta['pageRelated'] ) : esc_url( $ps_meta['urlRelated'] ); ?>"><?php echo __( 'Read More', 'storefront' ) ?></a>
                                     </div>
                                     <img src="<?php echo $slider_img_src[0]; ?>" style="width: 100%"/>
                                 </div>
@@ -763,10 +771,10 @@ if ( ! function_exists( 'storefront_product_categories' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_product_categories_args', array(
-				'limit'            => 3,
-				'columns'          => 3,
+				'limit'            => 5,
+				'columns'          => 5,
 				'child_categories' => 0,
-				'orderby'          => 'name',
+				'orderby'          => 'term_id',
 				'title'            => __( 'Shop by Category', 'storefront' ),
 			) );
 
@@ -1152,5 +1160,26 @@ if ( ! function_exists( 'storefront_header_container_close' ) ) {
 	 */
 	function storefront_header_container_close() {
 		echo '</div>';
+	}
+}
+
+if ( ! function_exists( 'hide_credit_link' ) ) {
+	/**
+	 * The header container close
+	 */
+	function hide_credit_link() {
+		return false;
+	}
+}
+if ( ! function_exists( 'hide_side_bar' ) ) {
+	/**
+	 * The header container close
+	 */
+	function hide_side_bar( $is_active_sidebar, $index ) {
+		if ( $index == 'sidebar-1' ) {
+			return false;
+		}
+
+		return true;
 	}
 }
