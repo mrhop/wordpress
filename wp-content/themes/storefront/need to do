@@ -9,6 +9,6 @@ jetpack
 shanyue
 woocommerce
 wp-mail-smtp
-目前到首页的swiper部分的处理，然后是整个首页，然后是post，然后....
-404 页面需要处理
-然后是每个页面的整体样式处理，sidebar的处理 等等
+
+基本完成
+product-searchform.php 【plugin中需要处理】

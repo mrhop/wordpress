@@ -169,10 +169,43 @@ var commons = {
             },
             loop: true
         });
+    },
+    searchClick: function searchClick() {
+        document.querySelector('form.woocommerce-product-search').addEventListener('submit', function (e) {
+            var domInput = document.querySelector('form.woocommerce-product-search input.search-field');
+            if (domInput.value && domInput.clientWidth) {
+                return true;
+            } else {
+                domInput.focus();
+                e.preventDefault();
+            }
+        });
+    },
+    commentSubmit: function commentSubmit() {
+        var form = document.querySelector('form.comment-form');
+        form.addEventListener('submit', function (e) {
+            var pComment = form.querySelector('p.comment-notes');
+            var domTextArea = form.querySelector('textarea');
+            var domName = form.querySelector('#author');
+            var domEmail = form.querySelector('#email');
+            if (domTextArea.value.trim() && domName.value.trim() && domEmail.value.trim()) {
+                return true;
+            } else {
+                var br = document.createElement('br');
+                var span = document.createElement('span');
+                span.classList.add('danger');
+                span.innerHTML = 'Comment, Name, Email area need to be filled';
+                pComment.append(br);
+                pComment.append(span);
+                e.preventDefault();
+            }
+        });
     }
 };
 document.addEventListener('DOMContentLoaded', function () {
     commons.slider();
+    commons.searchClick();
+    commons.commentSubmit();
 });
 
 /***/ }),

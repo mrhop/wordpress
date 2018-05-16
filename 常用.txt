@@ -75,4 +75,8 @@ nginx
 apache
 http://www.wpyou.com/wordpress-modify-post-max-size.html
 
-// mysql 数据库 备份和还原
+// mysql 创建，授权等
+
+https://blog.csdn.net/jsyhello/article/details/53078877
+
+明天将https到http给处理了，再考虑商品上传的问题【注意，排除法】
