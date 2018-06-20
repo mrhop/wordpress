@@ -233,8 +233,10 @@ header#masthead {
   background: $thickColor;
   .site-info {
     text-align: center;
-    a {
+    p, a {
       color: $lightColor;
+      margin-bottom: 0px;
+      padding: 1px 0;
     }
   }
   .search-form {

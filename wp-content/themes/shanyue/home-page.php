@@ -35,7 +35,7 @@ if ( $slider_query->have_posts() ) {
                         <div class="text-wrapper">
                             <h1><?php the_title(); ?></h1>
 							<?php the_excerpt(); ?>
-                            <a href="<?php the_permalink( $ps_meta['pageRelated'] ); ?>">了解更多</a>
+                            <a href="<?php the_permalink( $ps_meta['pageRelated'] ); ?>">Read More</a>
                         </div>
                         <img src="<?php echo $slider_img_src[0]; ?>" style="width: 100%"/>
                     </div>

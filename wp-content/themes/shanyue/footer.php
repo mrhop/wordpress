@@ -15,13 +15,9 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info container">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'shanyue' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'shanyue' ), 'WordPress' );
-				?>
-			</a>
-		</div><!-- .site-info -->
+            <p>Copyright 2018, Shanyue Trading, Inc. All Rights Reserved.</p>
+            <p>辽ICP备18007588号-1</p>
+        </div><!-- .site-info -->
 		<?php get_search_form(); ?>
     </footer><!-- #colophon -->
 </div><!-- #page -->
