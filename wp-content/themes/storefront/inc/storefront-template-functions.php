@@ -143,7 +143,7 @@ if ( ! function_exists( 'storefront_credit' ) ) {
 			<?php if ( apply_filters( 'storefront_credit_link', true ) ) { ?>
                 <br/> <?php echo '<a href="https://woocommerce.com" target="_blank" title="' . esc_attr__( 'WooCommerce - The Best eCommerce Platform for WordPress', 'storefront' ) . '" rel="author">' . esc_html__( 'Built with Storefront &amp; WooCommerce', 'storefront' ) . '</a>' ?>
 			<?php } ?>
-            <br>辽ICP备18007588号-1
+            <br>辽ICP备18007588号-2
         </div><!-- .site-info -->
 		<?php
 	}
