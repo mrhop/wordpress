@@ -791,10 +791,10 @@ if ( ! function_exists( 'storefront_product_categories' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_product_categories_args', array(
-				'limit'            => 5,
-				'columns'          => 5,
+				'limit'            => 7,
+				'columns'          => 7,
 				'child_categories' => 0,
-				'orderby'          => 'term_id',
+				'orderby'          => 'name',
 				'title'            => __( 'Shop by Category', 'storefront' ),
 			) );
 
