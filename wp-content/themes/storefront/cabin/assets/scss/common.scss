@@ -54,7 +54,9 @@ a:not([href]):not([tabindex]) {
 
 @media (min-width: map_get($grid-breakpoints, "md")) {
   .col-full {
-    width: 66.4989378333rem;
+    width: 90%;
+    max-width: 90%;
+    padding: 0;
   }
   .site-main {
     ul.products {
