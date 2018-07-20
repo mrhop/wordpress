@@ -191,6 +191,7 @@ header#masthead {
           }
         }
         &.wechat {
+          display: none;
           a:hover {
             img {
               display: block;
