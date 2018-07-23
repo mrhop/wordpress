@@ -85,9 +85,12 @@ https://letsencrypt.org
 define('FORCE_SSL_ADMIN', true); [只有admin强制ssl，另外其他页面要ssl的话，使用插件]
 ssl 基本完成，等待域名shanyuestore.com
 
-然后把footer上的copyright给加上
+// ubuntu mysql 自动备份
+https://blog.csdn.net/aitcax/article/details/41643919
+http://www.cnblogs.com/jiangyao/archive/2010/10/19/1855256.html
 
-开始资料的收集和整理
-
-
-
+binlog 用于回滚操作，避免数据丢失
+数据库用户访问的限制
+https://blog.csdn.net/liuquan0071/article/details/62423674
+https://www.cnblogs.com/fslnet/p/3143344.html
+grant all privileges on phplampDB.* to phplamp@localhost identified by '1234';

@@ -223,7 +223,7 @@ header#masthead {
       margin-bottom: 0;
       width: auto;
       img.custom-logo {
-        height: 80px;
+        height: 100px;
         width: auto;
       }
     }
@@ -301,7 +301,7 @@ header#masthead {
   .site-branding {
     margin-bottom: 0;
     img.custom-logo {
-      height: 80px;
+      height: 100px;
       width: auto;
     }
   }
@@ -329,6 +329,9 @@ header#masthead {
               background: #8E2800;
               color: #fff;
             }
+          }
+          &:first-child{
+            margin-left: 0;
           }
         }
 

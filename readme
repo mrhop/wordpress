@@ -1,0 +1,4 @@
+storefront 修改--------------------------
+storefront-woocommerce-template-hooks.php
+注释掉 导航中的cart
+//add_action( 'storefront_header', 'storefront_header_cart',    60 );
